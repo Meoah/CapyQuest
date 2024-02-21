@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cq24qfk1woxhc"]
+
+[ext_resource type="Script" path="res://Scripts/Spike.gd" id="1_4fb24"]
+[ext_resource type="Texture2D" uid="uid://biwond464pw3f" path="res://Visual/Tiles/tiles_packed.png" id="2_isjgy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpltt"]
+atlas = ExtResource("2_isjgy")
+region = Rect2(144, 54, 18, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crnh5"]
+size = Vector2(14, 5)
+
+[node name="Spike" type="Area2D"]
+position = Vector2(82, -9)
+script = ExtResource("1_4fb24")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_lpltt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_crnh5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

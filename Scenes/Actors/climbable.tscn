@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7v4yw4twqqu3"]
+
+[ext_resource type="Script" path="res://Scripts/Climbable.gd" id="1_iegch"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqfpq"]
+size = Vector2(8, 110)
+
+[node name="Climbable" type="Area2D"]
+position = Vector2(632, -174)
+script = ExtResource("1_iegch")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_jqfpq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

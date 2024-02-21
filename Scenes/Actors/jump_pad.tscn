@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://blro5y6g5kf37"]
+
+[ext_resource type="Script" path="res://Scripts/JumpPad.gd" id="1_v2xqs"]
+[ext_resource type="Texture2D" uid="uid://biwond464pw3f" path="res://Visual/Tiles/tiles_packed.png" id="2_a8och"]
+[ext_resource type="AudioStream" uid="uid://cyrl7d4p3mlye" path="res://Audio/SFX/JumpPad.ogg" id="3_8bdvu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyv46"]
+size = Vector2(18, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22m8d"]
+atlas = ExtResource("2_a8och")
+region = Rect2(126, 90, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awegl"]
+atlas = ExtResource("2_a8och")
+region = Rect2(126, 90, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq0g5"]
+atlas = ExtResource("2_a8och")
+region = Rect2(144, 90, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d8psy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22m8d")
+}],
+"loop": true,
+"name": &"rest",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awegl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq0g5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awegl")
+}],
+"loop": false,
+"name": &"spring",
+"speed": 8.0
+}]
+
+[node name="JumpPad" type="Area2D"]
+position = Vector2(1368, -345)
+script = ExtResource("1_v2xqs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_uyv46")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_d8psy")
+animation = &"spring"
+autoplay = "rest"
+frame = 2
+frame_progress = 1.0
+
+[node name="SpringSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_8bdvu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

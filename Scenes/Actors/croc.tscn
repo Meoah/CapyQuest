@@ -1,0 +1,112 @@
+[gd_scene load_steps=16 format=3 uid="uid://bt3u2or8i7dj5"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_at3i1"]
+[ext_resource type="Texture2D" uid="uid://d0y6t881s24wq" path="res://Visual/Character Sheets/Croc.png" id="2_d5eis"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dewkc"]
+atlas = ExtResource("2_d5eis")
+region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_836ju"]
+atlas = ExtResource("2_d5eis")
+region = Rect2(36, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7iwf"]
+atlas = ExtResource("2_d5eis")
+region = Rect2(54, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyanr"]
+atlas = ExtResource("2_d5eis")
+region = Rect2(72, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wl1j5"]
+atlas = ExtResource("2_d5eis")
+region = Rect2(90, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8dkt"]
+atlas = ExtResource("2_d5eis")
+region = Rect2(108, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gv7vu"]
+atlas = ExtResource("2_d5eis")
+region = Rect2(126, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2m00u"]
+atlas = ExtResource("2_d5eis")
+region = Rect2(144, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_posy5"]
+atlas = ExtResource("2_d5eis")
+region = Rect2(162, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3sjr"]
+atlas = ExtResource("2_d5eis")
+region = Rect2(180, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ii88r"]
+atlas = ExtResource("2_d5eis")
+region = Rect2(198, 0, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pn51a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dewkc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_836ju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7iwf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyanr")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_wl1j5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8dkt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gv7vu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2m00u")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_posy5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3sjr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ii88r")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6dkgf"]
+size = Vector2(17, 16)
+
+[node name="Croc" type="Area2D"]
+position = Vector2(2219, -441)
+script = ExtResource("1_at3i1")
+move_dir = Vector2(50, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pn51a")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_6dkgf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

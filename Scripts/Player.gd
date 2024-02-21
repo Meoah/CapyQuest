@@ -1,0 +1,245 @@
+extends CharacterBody2D
+
+var move_speed : float = 100.0
+var jump_force : float = 200.0
+var gravity : float = 500.0
+var health : int = 6
+var alive : bool = true
+var inMotion : bool = false
+var time : float
+var jumped : bool = false
+var climbing : bool = false
+var climbable : bool = false
+var damageTaken : float = 0
+var damageTakenMax : float = 0
+var isInvuln : float = 0
+var BGMSelection : String
+var savedScore : int = system_global.score
+var savedDuration : float = 0.0
+@onready var score_text : Label = get_node("UI/ScoreText")
+@onready var heartL = $UI/HeartL
+@onready var heartM = $UI/HeartM
+@onready var heartR = $UI/HeartR
+@onready var checkpointPos = {"x": global_position.x, "y": global_position.y}
+var duration : float = 0.0
+var minutes : int = 0
+var seconds : int = 0
+var msec : int = 0
+var stopwatch : bool = true
+var inv : Array = [null, null, null, null]
+
+func _ready():
+	score_text.text = str("Score: ", system_global.score)
+
+func _process(delta):
+	#timers
+	time = delta
+	damageTaken -= delta
+	isInvuln -= delta
+	
+	if stopwatch == true:
+		duration += delta
+	
+	@warning_ignore("narrowing_conversion")
+	minutes = fmod(duration, 3600) / 60
+	@warning_ignore("narrowing_conversion")
+	seconds = fmod(duration, 60)
+	@warning_ignore("narrowing_conversion")
+	msec = fmod (duration, 1) * 100
+	$UI/TimeText/Minutes.text = "%02d:" % minutes
+	$UI/TimeText/Seconds.text = "%02d:" % seconds
+	$UI/TimeText/Milliseconds.text = "%03d" % msec
+	
+	if alive == false:
+		if Input.is_action_just_pressed("jump"):
+			reviveAtCheckpoint()
+			
+	if Input.is_action_just_pressed("reset"):
+		system_global.score = savedScore
+		get_tree().reload_current_scene()
+
+func _physics_process(delta):
+	#Reset
+	if damageTaken <= 0:
+		velocity.x = 0
+	if is_on_floor() and alive == true:
+		jumped = false
+		inMotion = false
+	
+	#Movement
+	if damageTaken > 0:
+		velocity.x /= damageTakenMax / damageTaken
+		
+	if not is_on_floor() and climbing == false:
+		velocity.y += gravity * delta
+		if jumped == false:
+			jumped = true
+			$AnimatedSprite2D.play("jump")
+			
+	if climbing == true:
+		velocity.y = 0
+		
+	if Input.is_action_pressed("left") and alive == true and damageTaken <= 0:
+		if climbing == false:
+			inMotion = true
+			velocity.x -= move_speed
+			$AnimatedSprite2D.scale.x = -1
+			if is_on_floor():
+				$AnimatedSprite2D.play("walk")
+		if climbing == true:
+			velocity.x -= move_speed
+			$AnimatedSprite2D.play("climb")
+			
+	if Input.is_action_pressed("right") and alive == true and damageTaken <= 0:
+		if climbing == false:
+			inMotion = true
+			velocity.x += move_speed
+			$AnimatedSprite2D.scale.x = 1
+			if is_on_floor():
+				$AnimatedSprite2D.play("walk")
+		if climbing == true:
+			velocity.x += move_speed
+			$AnimatedSprite2D.play("climb")
+			
+	if Input.is_action_pressed("up") and alive == true and damageTaken <= 0 and climbable == true:
+		inMotion = true
+		climbing = true
+		velocity.y -= move_speed
+		$AnimatedSprite2D.play("climb")
+		
+	if Input.is_action_pressed("down") and alive == true and damageTaken <= 0 and climbable == true:
+		inMotion = true
+		climbing = true
+		velocity.y += move_speed
+		$AnimatedSprite2D.play("climb")
+		
+	if climbing == true:
+		if velocity.y == 0 and velocity.x == 0:
+			$AnimatedSprite2D.play("hang")
+		if is_on_floor():
+			$AnimatedSprite2D.play("idle")
+			inMotion = false
+			climbing = false
+		if climbable == false:
+			inMotion = false
+			climbing = false
+		
+	if Input.is_action_just_pressed("jump") and is_on_floor() and alive == true and damageTaken <= 0:
+		inMotion = true
+		jumped = true
+		velocity.y = -jump_force
+		$SFX/JumpSFX.play()
+		$AnimatedSprite2D.play("jump")
+		
+	if inMotion == false:
+		$AnimatedSprite2D.play("idle")
+		
+	move_and_slide()
+	
+	#Death Plane
+	if global_position.y > 100:
+		take_damage(6)
+
+func addInv(item : String):
+	for i in 3:
+		if inv[i] == null:
+			inv[i] = item
+			break
+	print(inv)
+
+func useInv(item : String):
+	for i in 3:
+		if inv[i] == item:
+			inv[i] = null
+			return(true)
+	return(false)
+
+func knockback(force : float):
+	if $AnimatedSprite2D.scale.x == 1:
+		velocity.x = -move_speed * 2
+	if $AnimatedSprite2D.scale.x == -1:
+		velocity.x = move_speed * 2
+	velocity.y *= -1
+	damageTaken = force
+	damageTakenMax = force
+
+func JumpPad():
+	inMotion = true
+	jumped = true
+	velocity.y = -jump_force*1.5
+
+func invuln(force : float):
+	isInvuln = force
+	if alive == true:
+		for i in 8:
+			modulate.a = 0.5
+			await get_tree().create_timer((8 * force) * time).timeout
+			modulate.a = 1
+			await get_tree().create_timer((8 * force) * time).timeout
+
+func take_damage(damage: int):
+	if alive == true and isInvuln < 0:
+		health -= damage
+		if health > 6:
+			health = 6
+		if health <= 0:
+			game_over()
+		if damage > 0:
+			knockback(0.5)
+			invuln(1)
+			$SFX/HitSFX.play()
+	else:
+		pass
+
+func game_over():
+	alive = false
+	$AnimatedSprite2D.play("dead")
+	velocity.x = 0
+	velocity.y = 0
+	move_speed = 0
+	jump_force = 0
+	gravity = 0
+	isInvuln = -1
+	stopwatch = false
+	add_score(-10)
+	$UI/GameOverText.visible = true
+	
+	if $BGM/DayBGM.is_playing() == true:
+		$BGM/DayBGM._set_playing(false)
+		BGMSelection = "day"
+	if $BGM/DuskBGM.is_playing() == true:
+		$BGM/DuskBGM._set_playing(false)
+		BGMSelection = "dusk"
+	if $BGM/NightBGM.is_playing() == true:
+		$BGM/NightBGM._set_playing(false)
+		BGMSelection = "night"	
+	$BGM/GameOverBGM._set_playing(true)
+
+func reviveAtCheckpoint():
+	alive = true
+	health = 6
+	move_speed = 100.0
+	jump_force = 200.0
+	gravity = 500.0
+	stopwatch = true
+	
+	if BGMSelection == "day":
+		$BGM/DayBGM._set_playing(true)
+	if BGMSelection == "dusk":
+		$BGM/DuskBGM._set_playing(true)
+	if BGMSelection == "night":
+		$BGM/NightBGM._set_playing(true)
+	$BGM/GameOverBGM._set_playing(false)
+	
+	$UI/GameOverText.visible = false
+	$AnimatedSprite2D.play("idle")
+	
+	duration = savedDuration
+	global_position.y = checkpointPos.y
+	global_position.x = checkpointPos.x
+
+func add_score(amount : int):
+	if amount == 10:
+		$SFX/CoinSFX.play()
+	system_global.score += amount
+	score_text.text = str("Score: ", system_global.score)

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://blyba3coedwa0"]
+
+[ext_resource type="Script" path="res://Scripts/EndFlag.gd" id="1_7272y"]
+[ext_resource type="Texture2D" uid="uid://biwond464pw3f" path="res://Visual/Tiles/tiles_packed.png" id="2_v6jar"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4oyb"]
+atlas = ExtResource("2_v6jar")
+region = Rect2(198, 90, 18, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yddn8"]
+size = Vector2(18, 36)
+
+[node name="EndFlag" type="Area2D"]
+position = Vector2(3150, -563)
+script = ExtResource("1_7272y")
+next_scene = "res://Scenes/Levels/Level1.tscn"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_n4oyb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yddn8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
