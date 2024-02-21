@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cu8n4swsywvgl"]
+[gd_scene load_steps=48 format=3 uid="uid://cu8n4swsywvgl"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_jttq3"]
 [ext_resource type="Texture2D" uid="uid://dyf86g2a5rxf2" path="res://Visual/Character Sheets/Jeff.png" id="2_50pkq"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://Scripts/HeartL.gd" id="14_w5qwq"]
 [ext_resource type="Script" path="res://Scripts/HeartM.gd" id="15_5rtlp"]
 [ext_resource type="Script" path="res://Scripts/HeartR.gd" id="16_75e8u"]
+[ext_resource type="Texture2D" uid="uid://bm1ilyvdx8ac4" path="res://Visual/Assets/placeholder bag.png" id="16_ubykk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tkt7m"]
 atlas = ExtResource("2_50pkq")
@@ -262,6 +263,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_kux6f"]
+atlas = ExtResource("4_y1du1")
+region = Rect2(126, 18, 18, 18)
+
 [node name="Jeff" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(0, -7)
 script = ExtResource("1_jttq3")
@@ -365,7 +370,7 @@ offset_bottom = 544.0
 text = "JEFF HAS FALLEN!!
 
 
-Press A/Space to Retry
+Press Jump to Retry
 From Checkpoint"
 label_settings = SubResource("LabelSettings_tj7o0")
 horizontal_alignment = 1
@@ -392,3 +397,28 @@ scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_81jyt")
 animation = &"Full"
 script = ExtResource("16_75e8u")
+
+[node name="Bag" type="Node2D" parent="UI"]
+
+[node name="BagSprite" type="Sprite2D" parent="UI/Bag"]
+position = Vector2(80, 592)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("16_ubykk")
+
+[node name="Inv1" type="Sprite2D" parent="UI/Bag"]
+visible = false
+position = Vector2(64, 576)
+scale = Vector2(1.5, 1.5)
+texture = SubResource("AtlasTexture_kux6f")
+
+[node name="Inv2" type="Sprite2D" parent="UI/Bag"]
+visible = false
+position = Vector2(96, 576)
+
+[node name="Inv3" type="Sprite2D" parent="UI/Bag"]
+visible = false
+position = Vector2(64, 608)
+
+[node name="Inv4" type="Sprite2D" parent="UI/Bag"]
+visible = false
+position = Vector2(96, 608)
