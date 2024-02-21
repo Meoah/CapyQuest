@@ -97,7 +97,6 @@ animations = [{
 size = Vector2(17, 16)
 
 [node name="Croc" type="Area2D"]
-position = Vector2(2219, -441)
 script = ExtResource("1_at3i1")
 move_dir = Vector2(50, 0)
 
