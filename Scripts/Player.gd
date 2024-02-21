@@ -153,7 +153,9 @@ func useInv(item : String):
 	for i in 3:
 		if inv[i] == item:
 			inv[i] = null
+			print(inv)
 			return(true)
+	print(inv)
 	return(false)
 
 func knockback(force : float):
