@@ -143,16 +143,16 @@ func _physics_process(delta):
 		take_damage(6)
 
 func addInv(item : int):
-	for i in 3:
+	for i in 4:
 		if inv[i] == 0:
 			inv[i] = item
 			break
 	print(inv)
 
 func useInv(item : int):
-	for i in 3:
-		if inv[i] == item:
-			inv[i] = 0
+	for i in 4:
+		if inv[3-i] == item:
+			inv[3-i] = 0
 			print(inv)
 			return(true)
 	print(inv)
