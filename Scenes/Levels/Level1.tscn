@@ -486,6 +486,58 @@ shape = SubResource("RectangleShape2D_4xssr")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Interaction/Key"]
 stream = ExtResource("12_6mlc1")
 
+[node name="Key2" type="Area2D" parent="Interaction"]
+position = Vector2(24, -32)
+script = ExtResource("10_446ys")
+
+[node name="Sprite2D" type="Sprite2D" parent="Interaction/Key2"]
+texture = SubResource("AtlasTexture_rv05a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction/Key2"]
+shape = SubResource("RectangleShape2D_4xssr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Interaction/Key2"]
+stream = ExtResource("12_6mlc1")
+
+[node name="Key4" type="Area2D" parent="Interaction"]
+position = Vector2(-24, -32)
+script = ExtResource("10_446ys")
+
+[node name="Sprite2D" type="Sprite2D" parent="Interaction/Key4"]
+texture = SubResource("AtlasTexture_rv05a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction/Key4"]
+shape = SubResource("RectangleShape2D_4xssr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Interaction/Key4"]
+stream = ExtResource("12_6mlc1")
+
+[node name="Key5" type="Area2D" parent="Interaction"]
+position = Vector2(0, -32)
+script = ExtResource("10_446ys")
+
+[node name="Sprite2D" type="Sprite2D" parent="Interaction/Key5"]
+texture = SubResource("AtlasTexture_rv05a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction/Key5"]
+shape = SubResource("RectangleShape2D_4xssr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Interaction/Key5"]
+stream = ExtResource("12_6mlc1")
+
+[node name="Key3" type="Area2D" parent="Interaction"]
+position = Vector2(56, -32)
+script = ExtResource("10_446ys")
+
+[node name="Sprite2D" type="Sprite2D" parent="Interaction/Key3"]
+texture = SubResource("AtlasTexture_rv05a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction/Key3"]
+shape = SubResource("RectangleShape2D_4xssr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Interaction/Key3"]
+stream = ExtResource("12_6mlc1")
+
 [node name="KeyDoor" type="Area2D" parent="Interaction"]
 position = Vector2(1863, -386)
 script = ExtResource("13_jfer6")
@@ -671,6 +723,10 @@ position = Vector2(3543, -630)
 position = Vector2(0, -8)
 
 [connection signal="body_entered" from="Interaction/Key" to="Interaction/Key" method="_on_body_entered"]
+[connection signal="body_entered" from="Interaction/Key2" to="Interaction/Key2" method="_on_body_entered"]
+[connection signal="body_entered" from="Interaction/Key4" to="Interaction/Key4" method="_on_body_entered"]
+[connection signal="body_entered" from="Interaction/Key5" to="Interaction/Key5" method="_on_body_entered"]
+[connection signal="body_entered" from="Interaction/Key3" to="Interaction/Key3" method="_on_body_entered"]
 [connection signal="body_entered" from="Interaction/KeyDoor" to="Interaction/KeyDoor" method="_on_body_entered"]
 [connection signal="body_entered" from="Interaction/SwitchDoor" to="Interaction/SwitchDoor" method="_on_body_entered"]
 [connection signal="body_entered" from="Interaction/SwitchDoor/Switch" to="Interaction/SwitchDoor/Switch" method="_on_body_entered"]

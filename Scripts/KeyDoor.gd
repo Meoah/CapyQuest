@@ -4,7 +4,7 @@ var obtained : bool = false
 
 func _on_body_entered(body):
 	if body.is_in_group("Player") and obtained == false:
-		if body.useInv("Key"):
+		if body.useInv(1):
 			$Success.play()
 			modulate.a = 0
 			obtained = true
