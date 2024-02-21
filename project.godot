@@ -27,11 +27,6 @@ system_global="*res://Scripts/system_global.gd"
 
 window/stretch/mode="viewport"
 
-[editor]
-
-version_control/plugin_name="GitPlugin"
-version_control/autoload_on_startup=true
-
 [input]
 
 jump={
