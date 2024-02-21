@@ -17,7 +17,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.is_in_group("Player") and obtained == false:
-		body.addInv("Key")
+		body.addInv(1)
 		$AudioStreamPlayer2D.play()
 		modulate.a = 0
 		obtained = true

@@ -26,7 +26,7 @@ var minutes : int = 0
 var seconds : int = 0
 var msec : int = 0
 var stopwatch : bool = true
-var inv : Array = [null, null, null, null]
+var inv : Array = [0, 0, 0, 0]
 
 func _ready():
 	score_text.text = str("Score: ", system_global.score)
@@ -142,17 +142,17 @@ func _physics_process(delta):
 	if global_position.y > 100:
 		take_damage(6)
 
-func addInv(item : String):
+func addInv(item : int):
 	for i in 3:
-		if inv[i] == null:
+		if inv[i] == 0:
 			inv[i] = item
 			break
 	print(inv)
 
-func useInv(item : String):
+func useInv(item : int):
 	for i in 3:
 		if inv[i] == item:
-			inv[i] = null
+			inv[i] = 0
 			print(inv)
 			return(true)
 	print(inv)
