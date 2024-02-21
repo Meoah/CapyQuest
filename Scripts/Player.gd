@@ -75,6 +75,8 @@ func _physics_process(delta):
 		if jumped == false:
 			jumped = true
 			$AnimatedSprite2D.play("jump")
+		if jumped == true and Input.is_action_pressed("jump") == false and velocity.y < 0:
+			velocity.y += 2 * gravity * delta
 			
 	if climbing == true:
 		velocity.y = 0
