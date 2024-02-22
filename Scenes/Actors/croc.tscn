@@ -94,8 +94,9 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6dkgf"]
-size = Vector2(17, 16)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j8few"]
+radius = 6.5
+height = 16.0
 
 [node name="Croc" type="Area2D"]
 script = ExtResource("1_at3i1")
@@ -107,7 +108,7 @@ animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 1)
-shape = SubResource("RectangleShape2D_6dkgf")
+shape = SubResource("CapsuleShape2D_j8few")
 
 [node name="CrocSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_imry5")
