@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1708578080
+::res://::1708580080
 ::res://addons/::1708546768
 ::res://addons/godot-git-plugin/::1708577987
 ::res://addons/godot-git-plugin/win64/::1708578024
@@ -37,9 +37,9 @@ jeff.tscn::PackedScene::6245584795216827035::1708577987::0::1::::<><>::res://Scr
 jump_pad.tscn::PackedScene::3194497306008793628::1708546768::0::1::::<><>::res://Scripts/JumpPad.gd<>uid://biwond464pw3f::::res://Visual/Tiles/tiles_packed.png<>uid://cyrl7d4p3mlye::::res://Audio/SFX/JumpPad.ogg
 spike.tscn::PackedScene::5953390709723132380::1708546768::0::1::::<><>::res://Scripts/Spike.gd<>uid://biwond464pw3f::::res://Visual/Tiles/tiles_packed.png
 water.tscn::PackedScene::7074665159745753472::1708546768::0::1::::<><>::res://Scripts/Water.gd<>uid://biwond464pw3f::::res://Visual/Tiles/tiles_packed.png
-::res://Scenes/Levels/::1708577986
+::res://Scenes/Levels/::1708578437
 Level1.tscn::PackedScene::3501943533158284832::1708577986::0::1::::<><>::res://Scripts/Level1.gd<>uid://c3krqtojqt5xj::::res://Visual/Tiles/TileSets/TileSet.tres<>uid://cu8n4swsywvgl::::res://Scenes/Actors/jeff.tscn<>uid://bt3u2or8i7dj5::::res://Scenes/Actors/croc.tscn<>uid://cq24qfk1woxhc::::res://Scenes/Actors/spike.tscn<>uid://cf78otoespqs2::::res://Scenes/Actors/coin.tscn<>uid://blyba3coedwa0::::res://Scenes/Actors/end_flag.tscn<>uid://c72ax4adhg71m::::res://Scenes/Actors/water.tscn<>uid://biwond464pw3f::::res://Visual/Tiles/tiles_packed.png<>uid://blro5y6g5kf37::::res://Scenes/Actors/jump_pad.tscn<>uid://b7v4yw4twqqu3::::res://Scenes/Actors/climbable.tscn<>uid://c8p1jwwxg5fcj::::res://Scenes/Actors/checkpoint.tscn<>res://Scripts/Key.gd<>uid://bq1p8uauot3qo::::res://Audio/SFX/KeyGet.ogg<>uid://didu2edeqelkp::::res://Audio/SFX/KeyUse.ogg<>res://Scripts/KeyDoor.gd<>uid://c6ocsup1jqhp8::::res://Audio/SFX/DoorFail.ogg<>uid://7xwxwwte5im6::::res://Audio/SFX/Switch.ogg<>res://Scripts/SwitchDoor.gd<>res://Scripts/Switch.gd<>uid://danh0xd4pxj42::::res://Audio/SFX/SwitchDoor.ogg
-Level2.tscn::PackedScene::215083027508973174::1708577986::0::1::::<><>::uid://biwond464pw3f::::res://Visual/Tiles/tiles_packed.png<>res://Scripts/Level2.gd<>uid://c3krqtojqt5xj::::res://Visual/Tiles/TileSets/TileSet.tres<>uid://blro5y6g5kf37::::res://Scenes/Actors/jump_pad.tscn<>uid://c8p1jwwxg5fcj::::res://Scenes/Actors/checkpoint.tscn<>uid://cf78otoespqs2::::res://Scenes/Actors/coin.tscn<>uid://bt3u2or8i7dj5::::res://Scenes/Actors/croc.tscn<>uid://cq24qfk1woxhc::::res://Scenes/Actors/spike.tscn<>uid://blyba3coedwa0::::res://Scenes/Actors/end_flag.tscn<>uid://c72ax4adhg71m::::res://Scenes/Actors/water.tscn<>uid://cu8n4swsywvgl::::res://Scenes/Actors/jeff.tscn
+Level2.tscn::PackedScene::215083027508973174::1708578437::0::1::::<><>::uid://biwond464pw3f::::res://Visual/Tiles/tiles_packed.png<>res://Scripts/Level2.gd<>uid://c3krqtojqt5xj::::res://Visual/Tiles/TileSets/TileSet.tres<>uid://blro5y6g5kf37::::res://Scenes/Actors/jump_pad.tscn<>uid://c8p1jwwxg5fcj::::res://Scenes/Actors/checkpoint.tscn<>uid://cf78otoespqs2::::res://Scenes/Actors/coin.tscn<>uid://bt3u2or8i7dj5::::res://Scenes/Actors/croc.tscn<>uid://cq24qfk1woxhc::::res://Scenes/Actors/spike.tscn<>uid://blyba3coedwa0::::res://Scenes/Actors/end_flag.tscn<>uid://c72ax4adhg71m::::res://Scenes/Actors/water.tscn<>uid://cu8n4swsywvgl::::res://Scenes/Actors/jeff.tscn
 ::res://Scripts/::1708557734
 Checkpoint.gd::GDScript::-1::1708546768::0::1::::<>Area2D<>::
 Climbable.gd::GDScript::-1::1708546768::0::1::::<>Area2D<>::
@@ -60,7 +60,7 @@ Switch.gd::GDScript::-1::1708546768::0::1::::<>Area2D<>::
 SwitchDoor.gd::GDScript::-1::1708546768::0::1::::<>Area2D<>::
 system_global.gd::GDScript::-1::1708546768::0::1::::<>Node<>::
 Water.gd::GDScript::-1::1708546768::0::1::::<>Area2D<>::
-::res://Visual/::1708556559
+::res://Visual/::1708578081
 Bitmap_Blackletter_12x17_V1.0.ttf::FontFile::9190578620975483906::1708546768::1708548574::1::::<><>::
 icon.svg::CompressedTexture2D::437704297814364409::1708546768::1708578081::1::::<><>::
 LowGothic_8x10_Regular.ttf::FontFile::2026600456358351905::1708556549::1708556559::1::::<><>::
@@ -73,5 +73,5 @@ Jeff.png::CompressedTexture2D::8856175564425329481::1708546768::1708548574::1:::
 ::res://Visual/Tiles/::1708548574
 tilemap-backgrounds_packed.png::CompressedTexture2D::3895769904835087371::1708546768::1708548574::1::::<><>::
 tiles_packed.png::CompressedTexture2D::2994221200423415677::1708546768::1708548574::1::::<><>::
-::res://Visual/Tiles/TileSets/::1708577987
-TileSet.tres::TileSet::6759834548373211847::1708577987::0::1::::<><>::uid://biwond464pw3f::::res://Visual/Tiles/tiles_packed.png
+::res://Visual/Tiles/TileSets/::1708578161
+TileSet.tres::TileSet::6759834548373211847::1708578161::0::1::::<><>::uid://biwond464pw3f::::res://Visual/Tiles/tiles_packed.png
