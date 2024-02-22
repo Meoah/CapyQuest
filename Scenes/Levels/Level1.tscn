@@ -666,9 +666,9 @@ stream = ExtResource("15_q7t72")
 
 [node name="EndFlag" parent="Interaction" instance=ExtResource("6_nogbn")]
 position = Vector2(3543, -630)
+next_scene = "res://Scenes/Levels/Level2.tscn"
 
 [node name="Jeff" parent="." instance=ExtResource("3_7mqho")]
-position = Vector2(0, -8)
 
 [connection signal="body_entered" from="Interaction/Key" to="Interaction/Key" method="_on_body_entered"]
 [connection signal="body_entered" from="Interaction/KeyDoor" to="Interaction/KeyDoor" method="_on_body_entered"]

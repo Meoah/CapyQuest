@@ -1,31 +1,45 @@
-[gd_scene load_steps=7 format=3 uid="uid://cf78otoespqs2"]
+[gd_scene load_steps=9 format=3 uid="uid://cf78otoespqs2"]
 
 [ext_resource type="Script" path="res://Scripts/Coin.gd" id="1_gl67c"]
-[ext_resource type="Texture2D" uid="uid://biwond464pw3f" path="res://Visual/Tiles/tiles_packed.png" id="2_y0d2x"]
+[ext_resource type="Texture2D" uid="uid://c5tgkfekpye68" path="res://Visual/Assets/Coin-Sheet.png" id="2_ooai2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jrkg2"]
 radius = 7.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vffry"]
-atlas = ExtResource("2_y0d2x")
-region = Rect2(198, 126, 18, 18)
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rdyo"]
+atlas = ExtResource("2_ooai2")
+region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ul44j"]
-atlas = ExtResource("2_y0d2x")
-region = Rect2(216, 126, 18, 18)
+[sub_resource type="AtlasTexture" id="AtlasTexture_odc10"]
+atlas = ExtResource("2_ooai2")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7tdp"]
+atlas = ExtResource("2_ooai2")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pprip"]
+atlas = ExtResource("2_ooai2")
+region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tchch"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vffry")
+"texture": SubResource("AtlasTexture_7rdyo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ul44j")
+"texture": SubResource("AtlasTexture_odc10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7tdp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pprip")
 }],
 "loop": true,
 "name": &"default",
-"speed": 2.0
+"speed": 4.0
 }]
 
 [node name="Coin" type="Area2D"]
@@ -37,6 +51,6 @@ shape = SubResource("CircleShape2D_jrkg2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tchch")
 autoplay = "default"
-frame_progress = 0.786155
+frame_progress = 0.137641
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
