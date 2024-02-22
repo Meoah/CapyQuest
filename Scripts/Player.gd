@@ -208,6 +208,9 @@ func game_over():
 	add_score(-10)
 	$UI/GameOverText.visible = true
 	
+	if $BGM/DawnBGM.is_playing() == true:
+		$BGM/DawnBGM._set_playing(false)
+		BGMSelection = "dawn"
 	if $BGM/DayBGM.is_playing() == true:
 		$BGM/DayBGM._set_playing(false)
 		BGMSelection = "day"
@@ -217,6 +220,9 @@ func game_over():
 	if $BGM/NightBGM.is_playing() == true:
 		$BGM/NightBGM._set_playing(false)
 		BGMSelection = "night"	
+	if $BGM/TwilightBGM.is_playing() == true:
+		$BGM/TwilightBGM._set_playing(false)
+		BGMSelection = "twilight"	
 	$BGM/GameOverBGM._set_playing(true)
 
 func reviveAtCheckpoint():

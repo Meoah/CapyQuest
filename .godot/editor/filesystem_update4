@@ -1,7 +1,2 @@
 res://Scenes/Levels/Level1.tscn
-res://Visual/Tiles/TileSets/TileSet.tres
-res://Scripts/EndFlag.gd
-res://Scenes/Levels/Level2.tscn
-res://Scenes/Actors/jump_pad.tscn
-res://Scenes/Actors/checkpoint.tscn
-res://Scenes/Actors/coin.tscn
+res://Scripts/Player.gd
