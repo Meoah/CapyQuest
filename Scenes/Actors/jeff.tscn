@@ -206,11 +206,10 @@ size = Vector2(12, 14)
 
 [sub_resource type="LabelSettings" id="LabelSettings_rn25h"]
 font = ExtResource("11_4t0rh")
-font_size = 36
+font_size = 40
 font_color = Color(1, 0.858824, 0.427451, 1)
 outline_size = 5
 outline_color = Color(0.266667, 0.235294, 0.0745098, 1)
-shadow_size = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_aiq3j"]
 font = ExtResource("11_4t0rh")
