@@ -1,2 +1,9 @@
-res://Scenes/Levels/Level1.tscn
+res://Scenes/Actors/jeff.tscn
+res://Visual/Tiles/TileSets/TileSet.tres
 res://Scripts/Player.gd
+res://Scenes/Levels/Level1.tscn
+res://Scenes/Levels/Level2.tscn
+res://Scripts/Water.gd
+res://Scenes/Actors/water.tscn
+res://Scenes/Actors/croc.tscn
+res://Scripts/Enemy.gd

@@ -88,6 +88,7 @@ func _physics_process(delta):
 			$AnimatedSprite2D.scale.x = -1
 			if is_on_floor():
 				$AnimatedSprite2D.play("walk")
+				$SFX/WalkSFX.play()
 		if climbing == true:
 			velocity.x -= move_speed
 			$AnimatedSprite2D.play("climb")
@@ -99,6 +100,7 @@ func _physics_process(delta):
 			$AnimatedSprite2D.scale.x = 1
 			if is_on_floor():
 				$AnimatedSprite2D.play("walk")
+				$SFX/WalkSFX.play()
 		if climbing == true:
 			velocity.x += move_speed
 			$AnimatedSprite2D.play("climb")

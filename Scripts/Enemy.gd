@@ -24,6 +24,7 @@ func _process(delta):
 		$AnimatedSprite2D.scale.x = 1
 	else:
 		$AnimatedSprite2D.play("idle")
+		$CrocSFX.play()
 	
 	if global_position == target_pos and timerSet == false:
 		timerSet = true

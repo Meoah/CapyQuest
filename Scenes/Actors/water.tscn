@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c72ax4adhg71m"]
+[gd_scene load_steps=8 format=3 uid="uid://c72ax4adhg71m"]
 
 [ext_resource type="Script" path="res://Scripts/Water.gd" id="1_mcqyd"]
 [ext_resource type="Texture2D" uid="uid://biwond464pw3f" path="res://Visual/Tiles/tiles_packed.png" id="2_v6ii2"]
+[ext_resource type="AudioStream" uid="uid://bpcyy5jm2r5sa" path="res://Audio/SFX/Water.ogg" id="3_1fr3h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hgt5y"]
 atlas = ExtResource("2_v6ii2")
@@ -39,5 +40,9 @@ frame_progress = 0.893281
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_bjhk8")
+
+[node name="WaterSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_1fr3h")
+volume_db = -4.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
