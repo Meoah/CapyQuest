@@ -1,2 +1,3 @@
-
-.godot/editor/editor_layout.cfg
+.godot/editor/*
+.godot/imported/*
+.godot/uid_cache.bin

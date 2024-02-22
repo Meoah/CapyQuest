@@ -28,6 +28,9 @@ var msec : int = 0
 var stopwatch : bool = true
 var inv : Array = [0, 0, 0, 0]
 
+enum state {stand, jump, crouch}
+	
+
 func _ready():
 	score_text.text = str("Score: ", system_global.score)
 
@@ -67,77 +70,81 @@ func _physics_process(delta):
 		inMotion = false
 	
 	#Movement
-	if damageTaken > 0:
-		velocity.x /= damageTakenMax / damageTaken
-		
-	if not is_on_floor() and climbing == false:
-		velocity.y += gravity * delta
-		if jumped == false:
-			jumped = true
-			$AnimatedSprite2D.play("jump")
-		if jumped == true and Input.is_action_pressed("jump") == false and velocity.y < 0:
-			velocity.y += 2 * gravity * delta
-			
-	if climbing == true:
-		velocity.y = 0
-		
-	if Input.is_action_pressed("left") and alive == true and damageTaken <= 0:
-		if climbing == false:
-			inMotion = true
-			velocity.x -= move_speed
-			$AnimatedSprite2D.scale.x = -1
-			if is_on_floor():
-				$AnimatedSprite2D.play("walk")
-				$SFX/WalkSFX.play()
-		if climbing == true:
-			velocity.x -= move_speed
-			$AnimatedSprite2D.play("climb")
-			
-	if Input.is_action_pressed("right") and alive == true and damageTaken <= 0:
-		if climbing == false:
-			inMotion = true
-			velocity.x += move_speed
-			$AnimatedSprite2D.scale.x = 1
-			if is_on_floor():
-				$AnimatedSprite2D.play("walk")
-				$SFX/WalkSFX.play()
-		if climbing == true:
-			velocity.x += move_speed
-			$AnimatedSprite2D.play("climb")
-			
-	if Input.is_action_pressed("up") and alive == true and damageTaken <= 0 and climbable == true:
-		inMotion = true
-		climbing = true
-		velocity.y -= move_speed
-		$AnimatedSprite2D.play("climb")
-		
-	if Input.is_action_pressed("down") and alive == true and damageTaken <= 0 and climbable == true:
-		inMotion = true
-		climbing = true
-		velocity.y += move_speed
-		$AnimatedSprite2D.play("climb")
-		
-	if climbing == true:
-		if velocity.y == 0 and velocity.x == 0:
-			$AnimatedSprite2D.play("hang")
-		if is_on_floor():
-			$AnimatedSprite2D.play("idle")
-			inMotion = false
-			climbing = false
-		if climbable == false:
-			inMotion = false
-			climbing = false
-		
-	if Input.is_action_just_pressed("jump") and is_on_floor() and alive == true and damageTaken <= 0:
-		inMotion = true
-		jumped = true
-		velocity.y = -jump_force
-		$SFX/JumpSFX.play()
-		$AnimatedSprite2D.play("jump")
-		
-	if inMotion == false:
-		$AnimatedSprite2D.play("idle")
-		
+	
+	
+	
+	
+	#if damageTaken > 0:
+		#velocity.x /= damageTakenMax / damageTaken
+		#
+	#if not is_on_floor() and climbing == false:
+		#velocity.y += gravity * delta
+		#if jumped == false:
+			#jumped = true
+			#$AnimatedSprite2D.play("jump")
+		#if jumped == true and Input.is_action_pressed("jump") == false and velocity.y < 0:
+			#velocity.y += 2 * gravity * delta
+			#
+	#if climbing == true:
+		#velocity.y = 0
+		#
+	#if Input.is_action_pressed("left") and alive == true and damageTaken <= 0:
+		#if climbing == false:
+			#inMotion = true
+			#velocity.x -= move_speed
+			#$AnimatedSprite2D.scale.x = -1
+			#if is_on_floor():
+				#$AnimatedSprite2D.play("walk")
+				#$SFX/WalkSFX.play()
+		#if climbing == true:
+			#velocity.x -= move_speed
+			#$AnimatedSprite2D.play("climb")
+			#
+	#if Input.is_action_pressed("right") and alive == true and damageTaken <= 0:
+		#if climbing == false:
+			#inMotion = true
+			#velocity.x += move_speed
+			#$AnimatedSprite2D.scale.x = 1
+			#if is_on_floor():
+				#$AnimatedSprite2D.play("walk")
+				#$SFX/WalkSFX.play()
+		#if climbing == true:
+			#velocity.x += move_speed
+			#$AnimatedSprite2D.play("climb")
+			#
+	#if Input.is_action_pressed("up") and alive == true and damageTaken <= 0 and climbable == true:
+		#inMotion = true
+		#climbing = true
+		#velocity.y -= move_speed
+		#$AnimatedSprite2D.play("climb")
+		#
+	#if Input.is_action_pressed("down") and alive == true and damageTaken <= 0 and climbable == true:
+		#inMotion = true
+		#climbing = true
+		#velocity.y += move_speed
+		#$AnimatedSprite2D.play("climb")
+		#
+	#if climbing == true:
+		#if velocity.y == 0 and velocity.x == 0:
+			#$AnimatedSprite2D.play("hang")
+		#if is_on_floor():
+			#$AnimatedSprite2D.play("idle")
+			#inMotion = false
+			#climbing = false
+		#if climbable == false:
+			#inMotion = false
+			#climbing = false
+		#
+	#if Input.is_action_just_pressed("jump") and is_on_floor() and alive == true and damageTaken <= 0:
+		#inMotion = true
+		#jumped = true
+		#velocity.y = -jump_force
+		#$SFX/JumpSFX.play()
+		#$AnimatedSprite2D.play("jump")
+		#
+	#if inMotion == false:
+		#$AnimatedSprite2D.play("idle")
+		#
 	move_and_slide()
 	
 	#Death Plane
