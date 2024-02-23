@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://yw0nrdo2tjjh"]
+
+[ext_resource type="Script" path="res://Scripts/LevelSelect.gd" id="1_jflf5"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_jflf5")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 651.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 100.0
+offset_right = 241.0
+offset_bottom = 236.0
+scale = Vector2(2.93438, 2.93438)
+
+[node name="Level1" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "LEVEL 1"
+
+[node name="Level2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "LEVEL 2"
+
+[node name="Level3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "LEVEL 3"
+
+[node name="Level4" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "LEVEL 4"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 523.0
+offset_right = 597.0
+offset_bottom = 554.0
+scale = Vector2(2, 2)
+text = "BACK TO TITLE"
+
+[connection signal="pressed" from="VBoxContainer/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/Level4" to="." method="_on_level_4_pressed"]

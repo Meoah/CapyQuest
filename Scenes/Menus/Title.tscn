@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://djc8r0xnhr0gn"]
+
+[ext_resource type="Script" path="res://Scripts/Title.gd" id="1_2finh"]
+[ext_resource type="Texture2D" uid="uid://c48ni4id8icbe" path="res://Visual/Assets/placeholder bag.png" id="2_j77jy"]
+[ext_resource type="FontFile" uid="uid://d368qtebrp6kk" path="res://Visual/Bitmap_Blackletter_12x17_V1.0.ttf" id="3_1nt0r"]
+[ext_resource type="Texture2D" uid="uid://gia6qjbpic0p" path="res://Visual/icon.svg" id="4_vgapi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pop3y"]
+font = ExtResource("3_1nt0r")
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_2finh")
+
+[node name="BackgroundImage" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1148.0
+offset_bottom = 646.0
+texture = ExtResource("2_j77jy")
+
+[node name="Copyright" type="Label" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 611.0
+offset_right = 107.0
+offset_bottom = 634.0
+text = "We own this; do not steal"
+label_settings = SubResource("LabelSettings_pop3y")
+
+[node name="MainButtons" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 545.0
+offset_top = 117.0
+offset_right = 673.0
+offset_bottom = 641.0
+alignment = 1
+
+[node name="StartGameButton" type="TextureButton" parent="MainButtons"]
+layout_mode = 2
+texture_normal = ExtResource("4_vgapi")
+
+[node name="LevelSelectButton" type="TextureButton" parent="MainButtons"]
+layout_mode = 2
+texture_normal = ExtResource("4_vgapi")
+
+[node name="CreditsButton" type="TextureButton" parent="MainButtons"]
+layout_mode = 2
+texture_normal = ExtResource("4_vgapi")
+
+[node name="QuitButton" type="TextureButton" parent="MainButtons"]
+layout_mode = 2
+texture_normal = ExtResource("4_vgapi")
+
+[connection signal="pressed" from="MainButtons/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="MainButtons/LevelSelectButton" to="." method="_on_level_select_button_pressed"]
+[connection signal="pressed" from="MainButtons/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MainButtons/QuitButton" to="." method="_on_quit_button_pressed"]

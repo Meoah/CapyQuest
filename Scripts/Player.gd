@@ -161,6 +161,11 @@ func _physics_process(delta):
 	if global_position.y > 100:
 		take_damage(6)
 
+#TODO func frameFreeze(timeScale, duration):
+	#Engine.time_scale = timeScale
+	#await(get_tree().create_timer(duration * timeScale).timeout)
+	#Engine.time_scale = 1.0
+
 func footstep():
 	# TODO: check terrain
 	var playOnce : bool = false
@@ -220,6 +225,7 @@ func take_damage(damage: int):
 		if health <= 0:
 			game_over()
 		if damage > 0:
+			# TODO frameFreeze(0.1, 0.4)
 			knockback(damage * 0.3)
 			invuln(damage * 1)
 			$SFX/HitSFX.play()
