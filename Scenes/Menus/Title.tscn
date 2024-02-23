@@ -1,58 +1,85 @@
-[gd_scene load_steps=6 format=3 uid="uid://djc8r0xnhr0gn"]
+[gd_scene load_steps=7 format=3 uid="uid://djc8r0xnhr0gn"]
 
 [ext_resource type="Script" path="res://Scripts/Title.gd" id="1_2finh"]
-[ext_resource type="Texture2D" uid="uid://c48ni4id8icbe" path="res://Visual/Assets/placeholder bag.png" id="2_j77jy"]
+[ext_resource type="Texture2D" uid="uid://b1k7hsm34fy6q" path="res://Visual/Island.png" id="2_qt21b"]
 [ext_resource type="FontFile" uid="uid://d368qtebrp6kk" path="res://Visual/Bitmap_Blackletter_12x17_V1.0.ttf" id="3_1nt0r"]
-[ext_resource type="Texture2D" uid="uid://gia6qjbpic0p" path="res://Visual/icon.svg" id="4_vgapi"]
+[ext_resource type="Theme" uid="uid://coy00xxofkh4n" path="res://Visual/Themes/LevelS.tres" id="4_38qsa"]
+[ext_resource type="AudioStream" uid="uid://dmsws3055wiou" path="res://Audio/BGM/Capybara_Hero_Opening.mp3" id="5_eyug6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pop3y"]
 font = ExtResource("3_1nt0r")
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 script = ExtResource("1_2finh")
 
 [node name="BackgroundImage" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 1148.0
 offset_bottom = 646.0
-texture = ExtResource("2_j77jy")
+texture = ExtResource("2_qt21b")
+
+[node name="TITLE DROP" type="Label" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 64.0
+offset_right = 1120.0
+offset_bottom = 232.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_1nt0r")
+theme_override_font_sizes/font_size = 96
+text = "CAPY QUEST"
 
 [node name="Copyright" type="Label" parent="."]
 layout_mode = 0
-offset_left = 12.0
-offset_top = 611.0
-offset_right = 107.0
-offset_bottom = 634.0
+offset_left = 5.0
+offset_top = 615.0
+offset_right = 319.0
+offset_bottom = 643.0
+text = "Ohlone Game Dev Club"
+label_settings = SubResource("LabelSettings_pop3y")
+
+[node name="Copyright2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 802.0
+offset_top = 614.0
+offset_right = 1146.0
+offset_bottom = 642.0
 text = "We own this; do not steal"
 label_settings = SubResource("LabelSettings_pop3y")
 
 [node name="MainButtons" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 545.0
-offset_top = 117.0
-offset_right = 673.0
-offset_bottom = 641.0
-alignment = 1
+offset_left = 408.0
+offset_top = 320.0
+offset_right = 741.0
+offset_bottom = 844.0
 
-[node name="StartGameButton" type="TextureButton" parent="MainButtons"]
+[node name="StartGameButton" type="Button" parent="MainButtons"]
 layout_mode = 2
-texture_normal = ExtResource("4_vgapi")
+theme = ExtResource("4_38qsa")
+text = "START GAME"
 
-[node name="LevelSelectButton" type="TextureButton" parent="MainButtons"]
+[node name="LevelSelectButton" type="Button" parent="MainButtons"]
 layout_mode = 2
-texture_normal = ExtResource("4_vgapi")
+theme = ExtResource("4_38qsa")
+text = "LEVEL SELECT"
 
-[node name="CreditsButton" type="TextureButton" parent="MainButtons"]
+[node name="CreditsButton" type="Button" parent="MainButtons"]
 layout_mode = 2
-texture_normal = ExtResource("4_vgapi")
+theme = ExtResource("4_38qsa")
+text = "CREDITS"
 
-[node name="QuitButton" type="TextureButton" parent="MainButtons"]
+[node name="QuitButton" type="Button" parent="MainButtons"]
 layout_mode = 2
-texture_normal = ExtResource("4_vgapi")
+theme = ExtResource("4_38qsa")
+text = "QUIT GAME"
+
+[node name="BGMTitle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_eyug6")
 
 [connection signal="pressed" from="MainButtons/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="MainButtons/LevelSelectButton" to="." method="_on_level_select_button_pressed"]

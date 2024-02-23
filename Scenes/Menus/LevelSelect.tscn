@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://yw0nrdo2tjjh"]
+[gd_scene load_steps=3 format=3 uid="uid://yw0nrdo2tjjh"]
 
 [ext_resource type="Script" path="res://Scripts/LevelSelect.gd" id="1_jflf5"]
+[ext_resource type="Theme" uid="uid://coy00xxofkh4n" path="res://Visual/Themes/LevelS.tres" id="2_rrkes"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -18,45 +19,58 @@ layout_mode = 0
 offset_right = 1154.0
 offset_bottom = 651.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 174.0
-offset_top = 100.0
-offset_right = 241.0
-offset_bottom = 236.0
-scale = Vector2(2.93438, 2.93438)
-
-[node name="Level1" type="Button" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
+offset_left = 192.0
+offset_top = 234.0
+offset_right = 971.0
+offset_bottom = 309.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Level1" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_rrkes")
 text = "LEVEL 1"
 
-[node name="Level2" type="Button" parent="VBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
+
+[node name="Level2" type="Button" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("2_rrkes")
 text = "LEVEL 2"
 
-[node name="Level3" type="Button" parent="VBoxContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
+
+[node name="Level3" type="Button" parent="HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("2_rrkes")
 text = "LEVEL 3"
 
-[node name="Level4" type="Button" parent="VBoxContainer"]
+[node name="VBoxContainer4" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
+
+[node name="Level4" type="Button" parent="HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+theme = ExtResource("2_rrkes")
 text = "LEVEL 4"
 
-[node name="Button" type="Button" parent="."]
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 476.0
-offset_top = 523.0
-offset_right = 597.0
-offset_bottom = 554.0
-scale = Vector2(2, 2)
+offset_left = 408.0
+offset_top = 399.0
+offset_right = 742.0
+offset_bottom = 711.0
+
+[node name="Back" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("2_rrkes")
 text = "BACK TO TITLE"
 
-[connection signal="pressed" from="VBoxContainer/Level1" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="VBoxContainer/Level2" to="." method="_on_level_2_pressed"]
-[connection signal="pressed" from="VBoxContainer/Level3" to="." method="_on_level_3_pressed"]
-[connection signal="pressed" from="VBoxContainer/Level4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer3/Level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer4/Level4" to="." method="_on_level_4_pressed"]
