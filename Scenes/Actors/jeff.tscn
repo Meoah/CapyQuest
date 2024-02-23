@@ -185,10 +185,16 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fvt5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obqmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jl42k")
 }],
 "loop": false,
 "name": &"jump",
-"speed": 12.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -310,9 +316,10 @@ script = ExtResource("1_jttq3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wnt8c")
-animation = &"walk"
+animation = &"jump"
 autoplay = "idle"
-frame_progress = 0.879646
+frame = 4
+frame_progress = 1.0
 
 [node name="BGM" type="Node2D" parent="."]
 
@@ -355,7 +362,6 @@ stream = ExtResource("13_ly6jw")
 volume_db = -10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_wyt60")
 
