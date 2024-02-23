@@ -20,11 +20,11 @@ offset_right = 1154.0
 offset_bottom = 651.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 2
-offset_left = 192.0
-offset_top = 234.0
-offset_right = 971.0
-offset_bottom = 309.0
+layout_mode = 0
+offset_left = 253.0
+offset_top = 242.0
+offset_right = 906.0
+offset_bottom = 305.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
@@ -61,9 +61,9 @@ text = "LEVEL 4"
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 408.0
-offset_top = 399.0
+offset_top = 387.0
 offset_right = 742.0
-offset_bottom = 711.0
+offset_bottom = 699.0
 
 [node name="Back" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
