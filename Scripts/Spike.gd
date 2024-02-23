@@ -5,4 +5,5 @@ func _process(_delta):
 
 	for body in overlapping_bodies:
 		if body.is_in_group("Player"):
-			body.take_damage(2)
+			body.knockback(0.1, global_position.x, global_position.y)
+			body.take_damage(1)

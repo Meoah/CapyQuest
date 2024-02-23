@@ -312,7 +312,6 @@ script = ExtResource("1_jttq3")
 sprite_frames = SubResource("SpriteFrames_wnt8c")
 animation = &"walk"
 autoplay = "idle"
-frame_progress = 0.879646
 
 [node name="BGM" type="Node2D" parent="."]
 

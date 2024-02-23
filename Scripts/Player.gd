@@ -11,8 +11,7 @@ var jumped : bool = false
 var climbing : bool = false
 var climbable : bool = false
 var descendable : bool = false
-var damageTaken : float = 0
-var damageTakenMax : float = 0
+var hitStun : float = 0
 var isInvuln : float = 0
 var BGMSelection : String
 var savedScore : int = system_global.score
@@ -36,7 +35,7 @@ func _ready():
 func _process(delta):
 	#timers
 	time = delta
-	damageTaken -= delta
+	hitStun -= delta
 	isInvuln -= delta
 	jumpedFromClimb -= delta
 	
@@ -63,7 +62,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	#Reset
-	if damageTaken <= 0:
+	if hitStun <= 0:
 		velocity.x = 0
 	if is_on_floor() and alive == true:
 		jumped = false
@@ -71,8 +70,10 @@ func _physics_process(delta):
 	
 	#Movement
 	
-	if damageTaken > 0:
-		velocity.x /= damageTakenMax / damageTaken
+	if hitStun > 0:
+		if velocity.x > 0 : velocity.x -= gravity * delta
+		if velocity.x < 0 : velocity.x += gravity * delta
+		if -0.1 < velocity.x and velocity.x < 0.1 : velocity.x = 0
 		
 	if not is_on_floor() and climbing == false:
 		velocity.y += gravity * delta
@@ -85,7 +86,7 @@ func _physics_process(delta):
 	if climbing == true:
 		velocity.y = 0
 		
-	if Input.is_action_pressed("left") and alive == true and damageTaken <= 0:
+	if Input.is_action_pressed("left") and alive == true and hitStun <= 0:
 		if climbing == false:
 			inMotion = true
 			velocity.x -= move_speed
@@ -97,7 +98,7 @@ func _physics_process(delta):
 			velocity.x -= move_speed / 2
 			$AnimatedSprite2D.play("climb")
 			
-	if Input.is_action_pressed("right") and alive == true and damageTaken <= 0:
+	if Input.is_action_pressed("right") and alive == true and hitStun <= 0:
 		if climbing == false:
 			inMotion = true
 			velocity.x += move_speed
@@ -109,19 +110,19 @@ func _physics_process(delta):
 			velocity.x += move_speed / 2
 			$AnimatedSprite2D.play("climb")
 			
-	if Input.is_action_pressed("up") and alive == true and damageTaken <= 0 and climbable == true and jumpedFromClimb < 0:
+	if Input.is_action_pressed("up") and alive == true and hitStun <= 0 and climbable == true and jumpedFromClimb < 0:
 		inMotion = true
 		climbing = true
 		velocity.y -= move_speed / 2
 		$AnimatedSprite2D.play("climb")
 		
-	if Input.is_action_just_pressed("down") and alive == true and damageTaken <= 0 and descendable == true and jumpedFromClimb < 0:
+	if Input.is_action_just_pressed("down") and alive == true and hitStun <= 0 and descendable == true and jumpedFromClimb < 0:
 		inMotion = true
 		climbing = true
 		global_position.y += 1
 		$AnimatedSprite2D.play("climb")
 		
-	if Input.is_action_pressed("down") and alive == true and damageTaken <= 0 and climbable == true and jumpedFromClimb < 0:
+	if Input.is_action_pressed("down") and alive == true and hitStun <= 0 and climbable == true and jumpedFromClimb < 0:
 		inMotion = true
 		climbing = true
 		velocity.y += move_speed
@@ -145,7 +146,7 @@ func _physics_process(delta):
 			$SFX/JumpSFX.play()
 			$AnimatedSprite2D.play("jump")
 		
-	if Input.is_action_just_pressed("jump") and is_on_floor() and alive == true and damageTaken <= 0:
+	if Input.is_action_just_pressed("jump") and is_on_floor() and alive == true and hitStun <= 0:
 		inMotion = true
 		jumped = true
 		velocity.y = -jump_force
@@ -168,15 +169,12 @@ func _physics_process(delta):
 
 func footstep():
 	# TODO: check terrain
-	var playOnce : bool = false
 	var stepFrame : int = 2
+	var stepFrame2 : int = 6
 	
-	if $AnimatedSprite2D.frame == stepFrame and playOnce == false:
-		playOnce = true
+	if ($AnimatedSprite2D.frame == stepFrame or $AnimatedSprite2D.frame == stepFrame2) and !$SFX/WalkSFX.playing:
 		$SFX/WalkSFX.pitch_scale = randf_range(1.1, 1.25)
 		$SFX/WalkSFX.play()
-	if $AnimatedSprite2D.frame != stepFrame and playOnce == true:
-		playOnce = false
 
 func addInv(item : int):
 	for i in 4:
@@ -194,14 +192,15 @@ func useInv(item : int):
 	print(inv)
 	return(false)
 
-func knockback(force : float):
-	if $AnimatedSprite2D.scale.x == 1:
-		velocity.x = -move_speed * 2
-	if $AnimatedSprite2D.scale.x == -1:
-		velocity.x = move_speed * 2
-	velocity.y *= -1
-	damageTaken = force
-	damageTakenMax = force
+func knockback(force : float, originX : float, originY : float):
+	if isInvuln < 0:
+		if (global_position.x - originX) < 0 : velocity.x = -(force * gravity)
+		if (global_position.x - originX) > 0 : velocity.x = force * gravity
+		if (global_position.y - originY) < 0 : velocity.y = -(force * gravity)
+		if (global_position.y - originY) > 0 : velocity.y = force * gravity
+		hitStun = force
+	else:
+		pass
 
 func JumpPad():
 	inMotion = true
@@ -226,7 +225,6 @@ func take_damage(damage: int):
 			game_over()
 		if damage > 0:
 			# TODO frameFreeze(0.1, 0.4)
-			knockback(damage * 0.3)
 			invuln(damage * 1)
 			$SFX/HitSFX.play()
 	else:
@@ -265,7 +263,7 @@ func game_over():
 func reviveAtCheckpoint():
 	alive = true
 	invuln(1)
-	damageTaken = 0
+	hitStun = 0
 	health = 6
 	move_speed = 100.0
 	jump_force = 200.0

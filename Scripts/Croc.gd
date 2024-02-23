@@ -38,7 +38,10 @@ func _process(delta):
 			$CrocSFX.play()
 			target_pos = start_pos
 			timerSet = false
+			
+	var overlapping_bodies = get_overlapping_bodies()
 
-func _on_body_entered(body):
-	if body.is_in_group("Player"):
-		body.take_damage(3)
+	for body in overlapping_bodies:
+		if body.is_in_group("Player"):
+			body.knockback(0.35, global_position.x, global_position.y)
+			body.take_damage(2)

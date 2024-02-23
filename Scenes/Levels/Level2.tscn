@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bp5mq7dgcij2g"]
+[gd_scene load_steps=40 format=3 uid="uid://bp5mq7dgcij2g"]
 
 [ext_resource type="Texture2D" uid="uid://biwond464pw3f" path="res://Visual/Tiles/tiles_packed.png" id="1_6wngx"]
 [ext_resource type="Script" path="res://Scripts/Level1.gd" id="1_xgxop"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" path="res://Scripts/Key.gd" id="14_x1eqy"]
 [ext_resource type="AudioStream" uid="uid://bq1p8uauot3qo" path="res://Audio/SFX/KeyGet.ogg" id="16_fstk4"]
 [ext_resource type="Script" path="res://Scripts/KeyDoor.gd" id="17_34v5b"]
+[ext_resource type="Script" path="res://Scripts/Wall.gd" id="18_eyesy"]
 [ext_resource type="AudioStream" uid="uid://didu2edeqelkp" path="res://Audio/SFX/KeyUse.ogg" id="18_p4gor"]
 [ext_resource type="AudioStream" uid="uid://c6ocsup1jqhp8" path="res://Audio/SFX/DoorFail.ogg" id="19_gb75c"]
 [ext_resource type="Script" path="res://Scripts/SwitchDoorManager.gd" id="20_n3e5e"]
@@ -47,6 +48,9 @@ load_path = "res://.godot/imported/tiles_packed.png-6ef4f1b30de30a594f77ba0eb35d
 atlas = SubResource("CompressedTexture2D_1xh45")
 region = Rect2(180, 18, 18, 18)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xqg02"]
+size = Vector2(2, 98)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aktko"]
 size = Vector2(50, 98)
 
@@ -55,6 +59,9 @@ atlas = ExtResource("1_6wngx")
 region = Rect2(144, 18, 18, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kigop"]
+size = Vector2(2, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v31p8"]
 size = Vector2(18, 54)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rv05a"]
@@ -529,7 +536,7 @@ scale = Vector2(0.559921, 5.99999)
 
 [node name="Puzzles" type="Node2D" parent="Interaction"]
 
-[node name="SwitchDoor" type="Area2D" parent="Interaction/Puzzles"]
+[node name="SwitchDoor" type="Node2D" parent="Interaction/Puzzles"]
 position = Vector2(3374, -571)
 script = ExtResource("20_n3e5e")
 
@@ -593,83 +600,96 @@ shape = SubResource("RectangleShape2D_la10b")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Interaction/Puzzles/SwitchDoor/Switch3"]
 stream = ExtResource("22_8812t")
 
-[node name="Wall" type="Node2D" parent="Interaction/Puzzles/SwitchDoor"]
+[node name="Wall" type="Area2D" parent="Interaction/Puzzles/SwitchDoor"]
 position = Vector2(-371, 63)
+script = ExtResource("18_eyesy")
+requiredSwitches = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall"]
-position = Vector2(355, -23)
+[node name="Sprites" type="Node2D" parent="Interaction/Puzzles/SwitchDoor/Wall"]
+position = Vector2(-3003, 508)
+
+[node name="Sprite2D" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall/Sprites"]
+position = Vector2(3358, -531)
 texture = SubResource("AtlasTexture_03nh7")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall"]
-position = Vector2(371, -23)
+[node name="Sprite2D2" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall/Sprites"]
+position = Vector2(3374, -531)
 texture = SubResource("AtlasTexture_03nh7")
 
-[node name="Sprite2D3" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall"]
-position = Vector2(387, -23)
+[node name="Sprite2D3" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall/Sprites"]
+position = Vector2(3390, -531)
 texture = SubResource("AtlasTexture_03nh7")
 
-[node name="Sprite2D4" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall"]
-position = Vector2(355, -39)
+[node name="Sprite2D4" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall/Sprites"]
+position = Vector2(3358, -547)
 texture = SubResource("AtlasTexture_03nh7")
 
-[node name="Sprite2D5" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall"]
-position = Vector2(371, -39)
+[node name="Sprite2D5" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall/Sprites"]
+position = Vector2(3374, -547)
 texture = SubResource("AtlasTexture_03nh7")
 
-[node name="Sprite2D6" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall"]
-position = Vector2(387, -39)
+[node name="Sprite2D6" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall/Sprites"]
+position = Vector2(3390, -547)
 texture = SubResource("AtlasTexture_03nh7")
 
-[node name="Sprite2D7" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall"]
-position = Vector2(355, -55)
+[node name="Sprite2D7" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall/Sprites"]
+position = Vector2(3358, -563)
 texture = SubResource("AtlasTexture_03nh7")
 
-[node name="Sprite2D8" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall"]
-position = Vector2(371, -55)
+[node name="Sprite2D8" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall/Sprites"]
+position = Vector2(3374, -563)
 texture = SubResource("AtlasTexture_03nh7")
 
-[node name="Sprite2D9" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall"]
-position = Vector2(387, -55)
+[node name="Sprite2D9" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall/Sprites"]
+position = Vector2(3390, -563)
 texture = SubResource("AtlasTexture_03nh7")
 
-[node name="Sprite2D10" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall"]
-position = Vector2(355, -71)
+[node name="Sprite2D10" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall/Sprites"]
+position = Vector2(3358, -579)
 texture = SubResource("AtlasTexture_03nh7")
 
-[node name="Sprite2D11" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall"]
-position = Vector2(371, -71)
+[node name="Sprite2D11" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall/Sprites"]
+position = Vector2(3374, -579)
 texture = SubResource("AtlasTexture_03nh7")
 
-[node name="Sprite2D12" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall"]
-position = Vector2(387, -71)
+[node name="Sprite2D12" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall/Sprites"]
+position = Vector2(3390, -579)
 texture = SubResource("AtlasTexture_03nh7")
 
-[node name="Sprite2D13" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall"]
-position = Vector2(355, -87)
+[node name="Sprite2D13" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall/Sprites"]
+position = Vector2(3358, -595)
 texture = SubResource("AtlasTexture_03nh7")
 
-[node name="Sprite2D14" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall"]
-position = Vector2(371, -87)
+[node name="Sprite2D14" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall/Sprites"]
+position = Vector2(3374, -595)
 texture = SubResource("AtlasTexture_03nh7")
 
-[node name="Sprite2D15" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall"]
-position = Vector2(387, -87)
+[node name="Sprite2D15" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall/Sprites"]
+position = Vector2(3390, -595)
 texture = SubResource("AtlasTexture_03nh7")
 
-[node name="Sprite2D16" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall"]
-position = Vector2(355, -103)
+[node name="Sprite2D16" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall/Sprites"]
+position = Vector2(3358, -611)
 texture = SubResource("AtlasTexture_03nh7")
 
-[node name="Sprite2D17" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall"]
-position = Vector2(371, -103)
+[node name="Sprite2D17" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall/Sprites"]
+position = Vector2(3374, -611)
 texture = SubResource("AtlasTexture_03nh7")
 
-[node name="Sprite2D18" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall"]
-position = Vector2(387, -103)
+[node name="Sprite2D18" type="Sprite2D" parent="Interaction/Puzzles/SwitchDoor/Wall/Sprites"]
+position = Vector2(3390, -611)
 texture = SubResource("AtlasTexture_03nh7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction/Puzzles/SwitchDoor"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction/Puzzles/SwitchDoor/Wall"]
+position = Vector2(345, -63)
+shape = SubResource("RectangleShape2D_xqg02")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Interaction/Puzzles/SwitchDoor/Wall"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction/Puzzles/SwitchDoor/Wall/StaticBody2D"]
+position = Vector2(371, -63)
 shape = SubResource("RectangleShape2D_aktko")
+debug_color = Color(0.797776, 0.388807, 0.447035, 0.42)
 
 [node name="Success" type="AudioStreamPlayer2D" parent="Interaction/Puzzles/SwitchDoor"]
 stream = ExtResource("23_judq5")
@@ -698,8 +718,15 @@ position = Vector2(371, -46)
 texture = SubResource("AtlasTexture_iefmq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction/Puzzles/KeyDoor"]
-position = Vector2(0, -1)
+position = Vector2(-10, -1)
 shape = SubResource("RectangleShape2D_kigop")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Interaction/Puzzles/KeyDoor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction/Puzzles/KeyDoor/StaticBody2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_v31p8")
+debug_color = Color(0.547279, 0.50484, 0.682244, 0.42)
 
 [node name="Success" type="AudioStreamPlayer2D" parent="Interaction/Puzzles/KeyDoor"]
 stream = ExtResource("18_p4gor")
@@ -727,9 +754,9 @@ next_scene = "res://Scenes/Levels/Level3.tscn"
 [node name="Jeff" parent="." instance=ExtResource("10_gb25f")]
 position = Vector2(0, -26)
 
-[connection signal="body_entered" from="Interaction/Puzzles/SwitchDoor" to="Interaction/Puzzles/SwitchDoor" method="_on_body_entered"]
 [connection signal="body_entered" from="Interaction/Puzzles/SwitchDoor/Switch" to="Interaction/Puzzles/SwitchDoor/Switch" method="_on_body_entered"]
 [connection signal="body_entered" from="Interaction/Puzzles/SwitchDoor/Switch2" to="Interaction/Puzzles/SwitchDoor/Switch2" method="_on_body_entered"]
 [connection signal="body_entered" from="Interaction/Puzzles/SwitchDoor/Switch3" to="Interaction/Puzzles/SwitchDoor/Switch3" method="_on_body_entered"]
+[connection signal="body_entered" from="Interaction/Puzzles/SwitchDoor/Wall" to="Interaction/Puzzles/SwitchDoor/Wall" method="_on_body_entered"]
 [connection signal="body_entered" from="Interaction/Puzzles/KeyDoor" to="Interaction/Puzzles/KeyDoor" method="_on_body_entered"]
 [connection signal="body_entered" from="Interaction/Puzzles/Key" to="Interaction/Puzzles/Key" method="_on_body_entered"]

@@ -8,8 +8,9 @@ func _on_body_entered(body):
 			$Success.play()
 			modulate.a = 0
 			obtained = true
+			$StaticBody2D/CollisionShape2D.set_disabled(true)
 			await get_tree().create_timer(1).timeout
 			queue_free()
 		else:
-			body.knockback(0.5)
+			body.knockback(0.5, global_position.x, global_position.y)
 			$Failure.play()

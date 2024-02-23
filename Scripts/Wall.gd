@@ -9,6 +9,7 @@ func _process(_delta):
 		$"../Success".play()
 		$Sprites.set_visible(false)
 		$CollisionShape2D.set_disabled(true)
+		$StaticBody2D/CollisionShape2D.set_disabled(true)
 
 func _on_body_entered(body):
 	if body.is_in_group("Player") and knockback == true:

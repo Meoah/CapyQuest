@@ -1,6 +1,7 @@
 extends Control
 
 func _ready():
+	$BGMTitle.play()
 	$MainButtons/StartGameButton.grab_focus()
 
 func _on_start_game_button_pressed():
