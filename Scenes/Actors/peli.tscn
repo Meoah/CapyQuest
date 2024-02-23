@@ -1,0 +1,105 @@
+[gd_scene load_steps=15 format=3 uid="uid://bif7phs1885na"]
+
+[ext_resource type="Script" path="res://Scripts/Peli.gd" id="1_jgn4a"]
+[ext_resource type="Texture2D" uid="uid://cotlnoppgeak6" path="res://Visual/Characters/Peli.png" id="2_4ivab"]
+[ext_resource type="AudioStream" uid="uid://dotqxid2le6q4" path="res://Audio/SFX/Wind4.ogg" id="3_m0nt6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvuog"]
+atlas = ExtResource("2_4ivab")
+region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8rkc"]
+atlas = ExtResource("2_4ivab")
+region = Rect2(18, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3750t"]
+atlas = ExtResource("2_4ivab")
+region = Rect2(36, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j0pm"]
+atlas = ExtResource("2_4ivab")
+region = Rect2(54, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yub0d"]
+atlas = ExtResource("2_4ivab")
+region = Rect2(72, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sqmq"]
+atlas = ExtResource("2_4ivab")
+region = Rect2(90, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cuog7"]
+atlas = ExtResource("2_4ivab")
+region = Rect2(108, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jf0x"]
+atlas = ExtResource("2_4ivab")
+region = Rect2(126, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06nre"]
+atlas = ExtResource("2_4ivab")
+region = Rect2(144, 0, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pn51a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvuog")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8rkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3750t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j0pm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yub0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4sqmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cuog7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jf0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06nre")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j8few"]
+radius = 5.0
+height = 16.0
+
+[node name="Peli" type="Area2D"]
+script = ExtResource("1_jgn4a")
+move_dir = Vector2(50, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pn51a")
+animation = &"walk"
+frame_progress = 0.990736
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_j8few")
+
+[node name="PeliSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_m0nt6")
+volume_db = -12.0
+max_distance = 100.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
