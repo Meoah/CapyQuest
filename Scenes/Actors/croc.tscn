@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://bt3u2or8i7dj5"]
 
-[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_at3i1"]
+[ext_resource type="Script" path="res://Scripts/Croc.gd" id="1_at3i1"]
 [ext_resource type="Texture2D" uid="uid://d0y6t881s24wq" path="res://Visual/Character Sheets/Croc.png" id="2_d5eis"]
 [ext_resource type="AudioStream" uid="uid://ds3trw3ksdx8u" path="res://Audio/SFX/Croc.ogg" id="3_imry5"]
 

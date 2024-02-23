@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7v4yw4twqqu3"]
+
+[ext_resource type="Script" path="res://Scripts/Climbable.gd" id="1_iegch"]
+[ext_resource type="Script" path="res://Scripts/ClimbableTop.gd" id="2_fd2ui"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqfpq"]
+size = Vector2(18, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_for32"]
+size = Vector2(18, 2)
+
+[node name="Climbable" type="Node2D"]
+
+[node name="Body" type="Area2D" parent="."]
+script = ExtResource("1_iegch")
+
+[node name="collision" type="CollisionShape2D" parent="Body"]
+shape = SubResource("RectangleShape2D_jqfpq")
+
+[node name="Top" type="Area2D" parent="."]
+script = ExtResource("2_fd2ui")
+
+[node name="collision" type="CollisionShape2D" parent="Top"]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_for32")
+debug_color = Color(0.909804, 0.266667, 0.345098, 0.419608)
+
+[connection signal="body_entered" from="Body" to="Body" method="_on_body_entered"]
+[connection signal="body_exited" from="Body" to="Body" method="_on_body_exited"]
+[connection signal="body_entered" from="Top" to="Top" method="_on_body_entered"]
+[connection signal="body_exited" from="Top" to="Top" method="_on_body_exited"]

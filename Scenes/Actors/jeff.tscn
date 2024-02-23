@@ -19,7 +19,7 @@
 [ext_resource type="Script" path="res://Scripts/HeartL.gd" id="14_w5qwq"]
 [ext_resource type="Script" path="res://Scripts/HeartM.gd" id="15_5rtlp"]
 [ext_resource type="Script" path="res://Scripts/HeartR.gd" id="16_75e8u"]
-[ext_resource type="Script" path="res://Scenes/Actors/Bag.gd" id="16_knqgv"]
+[ext_resource type="Script" path="res://Scripts/Bag.gd" id="16_knqgv"]
 [ext_resource type="Texture2D" uid="uid://nx3h4x5k022e" path="res://Visual/Assets/Inventory.png" id="20_tvplo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tkt7m"]
@@ -289,8 +289,9 @@ script = ExtResource("1_jttq3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wnt8c")
-animation = &"jump"
+animation = &"walk"
 autoplay = "idle"
+frame_progress = 0.96453
 
 [node name="BGM" type="Node2D" parent="."]
 
@@ -330,7 +331,7 @@ stream = ExtResource("6_6c6cw")
 
 [node name="WalkSFX" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource("13_ly6jw")
-volume_db = -5.0
+volume_db = -10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
