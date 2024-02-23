@@ -168,7 +168,7 @@ func footstep():
 	
 	if $AnimatedSprite2D.frame == stepFrame and playOnce == false:
 		playOnce = true
-		$SFX/WalkSFX.pitch_scale = randf_range(0.7, 0.9)
+		$SFX/WalkSFX.pitch_scale = randf_range(1.1, 1.25)
 		$SFX/WalkSFX.play()
 	if $AnimatedSprite2D.frame != stepFrame and playOnce == true:
 		playOnce = false
