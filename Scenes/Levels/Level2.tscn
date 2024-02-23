@@ -1,10 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://dcgnei4447io"]
+[gd_scene load_steps=18 format=3 uid="uid://dcgnei4447io"]
 
 [ext_resource type="Texture2D" uid="uid://biwond464pw3f" path="res://Visual/Tiles/tiles_packed.png" id="1_6wngx"]
 [ext_resource type="Script" path="res://Scripts/Level2.gd" id="1_7nlol"]
+[ext_resource type="Texture2D" uid="uid://bwkgox6toj1it" path="res://Visual/Tiles/sky_solid_color.png" id="2_3w4qn"]
 [ext_resource type="TileSet" uid="uid://c3krqtojqt5xj" path="res://Visual/Tiles/TileSets/TileSet.tres" id="2_yd43x"]
+[ext_resource type="Texture2D" uid="uid://d3j3e0rl24rpi" path="res://Visual/Tiles/clouds.png" id="3_apisl"]
 [ext_resource type="PackedScene" uid="uid://blro5y6g5kf37" path="res://Scenes/Actors/jump_pad.tscn" id="3_nnoco"]
+[ext_resource type="Texture2D" uid="uid://d2fl6l6umftjb" path="res://Visual/Tiles/mountain_depth_z_1.png" id="4_8p1xb"]
 [ext_resource type="PackedScene" uid="uid://c8p1jwwxg5fcj" path="res://Scenes/Actors/checkpoint.tscn" id="4_msg10"]
+[ext_resource type="Texture2D" uid="uid://ch4g0lspp4wb7" path="res://Visual/Tiles/mountain_depth_z_2.png" id="5_l1jsp"]
 [ext_resource type="PackedScene" uid="uid://cf78otoespqs2" path="res://Scenes/Actors/coin.tscn" id="5_t2xul"]
 [ext_resource type="PackedScene" uid="uid://bt3u2or8i7dj5" path="res://Scenes/Actors/croc.tscn" id="6_6ccbd"]
 [ext_resource type="PackedScene" uid="uid://cq24qfk1woxhc" path="res://Scenes/Actors/spike.tscn" id="7_h8v2n"]
@@ -563,6 +567,56 @@ sources/0 = SubResource("TileSetAtlasSource_7c5gq")
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_7nlol")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="SkyLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(512, 303)
+
+[node name="Sky" type="TextureRect" parent="ParallaxBackground/SkyLayer"]
+offset_left = -358.0
+offset_top = -500.0
+offset_right = 6810.0
+offset_bottom = -46.0
+texture = ExtResource("2_3w4qn")
+stretch_mode = 1
+
+[node name="MountainLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(512, 0)
+
+[node name="Mountains" type="TextureRect" parent="ParallaxBackground/MountainLayer"]
+offset_left = -358.0
+offset_top = -90.0
+offset_right = 6810.0
+offset_bottom = 62.0
+texture = ExtResource("4_8p1xb")
+stretch_mode = 1
+
+[node name="CloudLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(512, 0)
+
+[node name="Clouds" type="TextureRect" parent="ParallaxBackground/CloudLayer"]
+offset_left = -358.0
+offset_top = -90.0
+offset_right = 6810.0
+offset_bottom = 2.0
+texture = ExtResource("3_apisl")
+stretch_mode = 1
+
+[node name="FrontLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.75, 0.75)
+motion_mirroring = Vector2(512, 0)
+
+[node name="Front" type="TextureRect" parent="ParallaxBackground/FrontLayer"]
+offset_left = -358.0
+offset_top = -90.0
+offset_right = 6810.0
+offset_bottom = 53.0
+texture = ExtResource("5_l1jsp")
+stretch_mode = 1
 
 [node name="Concept" type="TileMap" parent="."]
 visible = false

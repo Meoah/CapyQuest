@@ -69,120 +69,53 @@ script = ExtResource("1_a6bqs")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="Far" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.25, 0.25)
+[node name="SkyLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
 motion_mirroring = Vector2(512, 303)
 
-[node name="Sky1" type="Sprite2D" parent="ParallaxBackground/Far"]
-position = Vector2(-150, -439)
+[node name="Sky" type="TextureRect" parent="ParallaxBackground/SkyLayer"]
+offset_left = -225.0
+offset_top = -972.0
+offset_right = 3359.0
+offset_bottom = -63.0
 texture = ExtResource("2_all0p")
-centered = false
+stretch_mode = 1
 
-[node name="Sky2" type="Sprite2D" parent="ParallaxBackground/Far"]
-position = Vector2(874, -439)
-texture = ExtResource("2_all0p")
-centered = false
-
-[node name="Sky3" type="Sprite2D" parent="ParallaxBackground/Far"]
-position = Vector2(1898, -439)
-texture = ExtResource("2_all0p")
-centered = false
-
-[node name="Sky4" type="Sprite2D" parent="ParallaxBackground/Far"]
-position = Vector2(2921, -439)
-texture = ExtResource("2_all0p")
-centered = false
-
-[node name="Sky5" type="Sprite2D" parent="ParallaxBackground/Far"]
-position = Vector2(2921, -1045)
-texture = ExtResource("2_all0p")
-centered = false
-
-[node name="Sky6" type="Sprite2D" parent="ParallaxBackground/Far"]
-position = Vector2(1898, -1045)
-texture = ExtResource("2_all0p")
-centered = false
-
-[node name="Sky7" type="Sprite2D" parent="ParallaxBackground/Far"]
-position = Vector2(874, -1045)
-texture = ExtResource("2_all0p")
-centered = false
-
-[node name="Sky8" type="Sprite2D" parent="ParallaxBackground/Far"]
-position = Vector2(-150, -1045)
-texture = ExtResource("2_all0p")
-centered = false
-
-[node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0, 0)
-motion_mirroring = Vector2(512, 0)
-
-[node name="Clouds1" type="Sprite2D" parent="ParallaxBackground/Clouds"]
-position = Vector2(-150, -439)
-texture = ExtResource("3_yeuj7")
-centered = false
-
-[node name="Clouds2" type="Sprite2D" parent="ParallaxBackground/Clouds"]
-position = Vector2(874, -439)
-texture = ExtResource("3_yeuj7")
-centered = false
-
-[node name="Clouds3" type="Sprite2D" parent="ParallaxBackground/Clouds"]
-position = Vector2(1898, -742)
-texture = ExtResource("3_yeuj7")
-centered = false
-
-[node name="Clouds4" type="Sprite2D" parent="ParallaxBackground/Clouds"]
-position = Vector2(2922, -742)
-texture = ExtResource("3_yeuj7")
-centered = false
-
-[node name="Middle" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="MountainLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(512, 0)
 
-[node name="Mountains1" type="Sprite2D" parent="ParallaxBackground/Middle"]
-position = Vector2(-150, 16)
+[node name="Mountains" type="TextureRect" parent="ParallaxBackground/MountainLayer"]
+offset_left = -225.0
+offset_top = -45.0
+offset_right = 3359.0
+offset_bottom = 107.0
 texture = ExtResource("4_0qgen")
-centered = false
+stretch_mode = 1
 
-[node name="Mountains2" type="Sprite2D" parent="ParallaxBackground/Middle"]
-position = Vector2(874, 16)
-texture = ExtResource("4_0qgen")
-centered = false
-
-[node name="Mountains3" type="Sprite2D" parent="ParallaxBackground/Middle"]
-position = Vector2(1898, -439)
-texture = ExtResource("4_0qgen")
-centered = false
-
-[node name="Mountains4" type="Sprite2D" parent="ParallaxBackground/Middle"]
-position = Vector2(2921, -439)
-texture = ExtResource("4_0qgen")
-centered = false
-
-[node name="Near" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="CloudLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
 motion_mirroring = Vector2(512, 0)
 
-[node name="Mountain1" type="Sprite2D" parent="ParallaxBackground/Near"]
-position = Vector2(-150, 22)
-texture = ExtResource("5_rlhb6")
-centered = false
+[node name="Clouds" type="TextureRect" parent="ParallaxBackground/CloudLayer"]
+offset_left = -225.0
+offset_top = -100.0
+offset_right = 3359.0
+offset_bottom = -8.0
+texture = ExtResource("3_yeuj7")
+stretch_mode = 1
 
-[node name="Mountain2" type="Sprite2D" parent="ParallaxBackground/Near"]
-position = Vector2(874, 22)
-texture = ExtResource("5_rlhb6")
-centered = false
+[node name="FrontLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.75, 0.75)
+motion_mirroring = Vector2(512, 0)
 
-[node name="Mountain3" type="Sprite2D" parent="ParallaxBackground/Near"]
-position = Vector2(1898, -439)
+[node name="Front" type="TextureRect" parent="ParallaxBackground/FrontLayer"]
+offset_left = -225.0
+offset_top = -45.0
+offset_right = 3359.0
+offset_bottom = 98.0
 texture = ExtResource("5_rlhb6")
-centered = false
-
-[node name="Mountain4" type="Sprite2D" parent="ParallaxBackground/Near"]
-position = Vector2(2921, -439)
-texture = ExtResource("5_rlhb6")
-centered = false
+stretch_mode = 1
 
 [node name="Terrain" type="TileMap" parent="."]
 tile_set = ExtResource("2_8jwqf")
