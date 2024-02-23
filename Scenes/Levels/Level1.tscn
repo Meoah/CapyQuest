@@ -124,12 +124,11 @@ script = ExtResource("1_a6bqs")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.5, 0.5)
-motion_mirroring = Vector2(0, 1)
 
 [node name="TileMap" type="TileMap" parent="ParallaxBackground/ParallaxLayer"]
 tile_set = SubResource("TileSet_b1od5")
 format = 2
-layer_0/tile_data = PackedInt32Array(-2, 0, 0, -1, 65536, 0, -65536, 131072, 0, -65535, 196608, 0, -65534, 262144, 0, -65533, 0, 0, -65532, 65536, 0, -65531, 131072, 0, -65530, 196608, 0, -65529, 262144, 0, -65528, 0, 0, -65527, 65536, 0, -65526, 131072, 0, -65525, 196608, 0, -65524, 262144, 0, -65523, 0, 0, -65522, 65536, 0, -65521, 131072, 0, -65520, 196608, 0, -65519, 262144, 0)
+layer_0/tile_data = PackedInt32Array(-2, 0, 0, -1, 65536, 0, -65536, 131072, 0, -65535, 196608, 0, -65534, 262144, 0)
 
 [node name="Terrain" type="TileMap" parent="."]
 tile_set = ExtResource("2_8jwqf")

@@ -152,7 +152,7 @@ func _physics_process(delta):
 		$SFX/JumpSFX.play()
 		$AnimatedSprite2D.play("jump")
 		
-	if inMotion == false:
+	if inMotion == false and alive == true:
 		$AnimatedSprite2D.play("idle")
 		
 	move_and_slide()
@@ -220,8 +220,8 @@ func take_damage(damage: int):
 		if health <= 0:
 			game_over()
 		if damage > 0:
-			knockback(0.5)
-			invuln(1)
+			knockback(damage * 0.3)
+			invuln(damage * 1)
 			$SFX/HitSFX.play()
 	else:
 		pass
@@ -258,18 +258,24 @@ func game_over():
 
 func reviveAtCheckpoint():
 	alive = true
+	invuln(1)
+	damageTaken = 0
 	health = 6
 	move_speed = 100.0
 	jump_force = 200.0
 	gravity = 500.0
 	stopwatch = true
 	
+	if BGMSelection == "dawn":
+		$BGM/DawnBGM._set_playing(true)
 	if BGMSelection == "day":
 		$BGM/DayBGM._set_playing(true)
 	if BGMSelection == "dusk":
 		$BGM/DuskBGM._set_playing(true)
 	if BGMSelection == "night":
 		$BGM/NightBGM._set_playing(true)
+	if BGMSelection == "twilight":
+		$BGM/TwilightBGM._set_playing(true)
 	$BGM/GameOverBGM._set_playing(false)
 	
 	$UI/GameOverText.visible = false
