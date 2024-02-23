@@ -1,7 +1,8 @@
-[gd_scene load_steps=33 format=3 uid="uid://bp5mq7dgcij2g"]
+[gd_scene load_steps=36 format=3 uid="uid://bp5mq7dgcij2g"]
 
 [ext_resource type="Script" path="res://Scripts/Level1.gd" id="1_a6bqs"]
 [ext_resource type="TileSet" uid="uid://c3krqtojqt5xj" path="res://Visual/Tiles/TileSets/TileSet.tres" id="2_8jwqf"]
+[ext_resource type="Texture2D" uid="uid://bvre045m4is6v" path="res://Visual/Tiles/tilemap-backgrounds_packed.png" id="2_kglus"]
 [ext_resource type="PackedScene" uid="uid://cu8n4swsywvgl" path="res://Scenes/Actors/jeff.tscn" id="3_7mqho"]
 [ext_resource type="PackedScene" uid="uid://bt3u2or8i7dj5" path="res://Scenes/Actors/croc.tscn" id="4_rb7x5"]
 [ext_resource type="PackedScene" uid="uid://cq24qfk1woxhc" path="res://Scenes/Actors/spike.tscn" id="5_2ryb1"]
@@ -21,6 +22,62 @@
 [ext_resource type="Script" path="res://Scripts/SwitchDoor.gd" id="16_83eiu"]
 [ext_resource type="Script" path="res://Scripts/Switch.gd" id="17_al01m"]
 [ext_resource type="AudioStream" uid="uid://danh0xd4pxj42" path="res://Audio/SFX/SwitchDoor.ogg" id="19_2nfkk"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fq1ij"]
+texture = ExtResource("2_kglus")
+texture_region_size = Vector2i(19, 72)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_b1od5"]
+tile_size = Vector2i(19, 72)
+sources/0 = SubResource("TileSetAtlasSource_fq1ij")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rv05a"]
 atlas = ExtResource("8_1pk3q")
@@ -62,6 +119,17 @@ size = Vector2(50, 98)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_a6bqs")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(0, 1)
+
+[node name="TileMap" type="TileMap" parent="ParallaxBackground/ParallaxLayer"]
+tile_set = SubResource("TileSet_b1od5")
+format = 2
+layer_0/tile_data = PackedInt32Array(-2, 0, 0, -1, 65536, 0, -65536, 131072, 0, -65535, 196608, 0, -65534, 262144, 0, -65533, 0, 0, -65532, 65536, 0, -65531, 131072, 0, -65530, 196608, 0, -65529, 262144, 0, -65528, 0, 0, -65527, 65536, 0, -65526, 131072, 0, -65525, 196608, 0, -65524, 262144, 0, -65523, 0, 0, -65522, 65536, 0, -65521, 131072, 0, -65520, 196608, 0, -65519, 262144, 0)
 
 [node name="Terrain" type="TileMap" parent="."]
 tile_set = ExtResource("2_8jwqf")
@@ -466,12 +534,12 @@ position = Vector2(549, -270)
 scale = Vector2(0.52, 4)
 
 [node name="Climbable4" parent="Interaction/Climbable" instance=ExtResource("9_jn25d")]
-position = Vector2(3267, -488)
-scale = Vector2(1.72, 0.639995)
+position = Vector2(3267, -486)
+scale = Vector2(0.56, 3.99998)
 
 [node name="Climbable3" parent="Interaction/Climbable" instance=ExtResource("9_jn25d")]
-position = Vector2(2205, -489)
-scale = Vector2(1.75996, 0.99999)
+position = Vector2(2205, -486)
+scale = Vector2(0.559921, 5.99999)
 
 [node name="Key" type="Area2D" parent="Interaction"]
 position = Vector2(1450, -671)
