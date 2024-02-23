@@ -1,9 +1,8 @@
 [gd_scene load_steps=59 format=3 uid="uid://cu8n4swsywvgl"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_jttq3"]
-[ext_resource type="Texture2D" uid="uid://dyf86g2a5rxf2" path="res://Visual/Character Sheets/Jeff.png" id="2_50pkq"]
+[ext_resource type="Texture2D" uid="uid://dyf86g2a5rxf2" path="res://Visual/Characters/Jeff.png" id="2_uv1wm"]
 [ext_resource type="AudioStream" uid="uid://chl20hkpmqmsa" path="res://Audio/BGM/Capybara_Hero_Day.mp3" id="3_yhhd0"]
-[ext_resource type="FontFile" uid="uid://d368qtebrp6kk" path="res://Visual/Bitmap_Blackletter_12x17_V1.0.ttf" id="4_q8biw"]
 [ext_resource type="Texture2D" uid="uid://biwond464pw3f" path="res://Visual/Tiles/tiles_packed.png" id="4_y1du1"]
 [ext_resource type="AudioStream" uid="uid://by3gunoauxk8h" path="res://Audio/SFX/Coin.ogg" id="5_8g437"]
 [ext_resource type="AudioStream" uid="uid://i1a7j27l8eli" path="res://Audio/SFX/Jump.ogg" id="5_frqrc"]
@@ -14,108 +13,109 @@
 [ext_resource type="AudioStream" uid="uid://bjvflyai2262b" path="res://Audio/SFX/Gem.ogg" id="6_di5hj"]
 [ext_resource type="AudioStream" uid="uid://dyi76auvxsebt" path="res://Audio/BGM/Capybara_Hero_Twilight.mp3" id="7_ho27q"]
 [ext_resource type="AudioStream" uid="uid://b043lrdgoxcw3" path="res://Audio/BGM/Capybara_Hero_GameOver.mp3" id="7_vgp3a"]
-[ext_resource type="FontFile" uid="uid://34x2wk5x3d5j" path="res://Visual/LowGothic_8x10_Regular.ttf" id="11_4t0rh"]
 [ext_resource type="AudioStream" uid="uid://bc4xyuk4s6ckc" path="res://Audio/SFX/Step.ogg" id="13_ly6jw"]
+[ext_resource type="FontFile" uid="uid://34x2wk5x3d5j" path="res://Visual/Fonts/LowGothic_8x10_Regular.ttf" id="14_bb2ti"]
 [ext_resource type="Script" path="res://Scripts/HeartL.gd" id="14_w5qwq"]
 [ext_resource type="Script" path="res://Scripts/HeartM.gd" id="15_5rtlp"]
+[ext_resource type="FontFile" uid="uid://d368qtebrp6kk" path="res://Visual/Fonts/Bitmap_Blackletter_12x17_V1.0.ttf" id="15_n3j55"]
 [ext_resource type="Script" path="res://Scripts/HeartR.gd" id="16_75e8u"]
 [ext_resource type="Script" path="res://Scripts/Bag.gd" id="16_knqgv"]
-[ext_resource type="Texture2D" uid="uid://nx3h4x5k022e" path="res://Visual/Assets/Inventory.png" id="20_tvplo"]
+[ext_resource type="Texture2D" uid="uid://nx3h4x5k022e" path="res://Visual/Props/Inventory.png" id="21_w1cg3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qxtkr"]
-atlas = ExtResource("2_50pkq")
+atlas = ExtResource("2_uv1wm")
 region = Rect2(304, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n1aw0"]
-atlas = ExtResource("2_50pkq")
+atlas = ExtResource("2_uv1wm")
 region = Rect2(320, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nei2l"]
-atlas = ExtResource("2_50pkq")
+atlas = ExtResource("2_uv1wm")
 region = Rect2(336, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j0og5"]
-atlas = ExtResource("2_50pkq")
+atlas = ExtResource("2_uv1wm")
 region = Rect2(352, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u5jpc"]
-atlas = ExtResource("2_50pkq")
+atlas = ExtResource("2_uv1wm")
 region = Rect2(448, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yhi3w"]
-atlas = ExtResource("2_50pkq")
+atlas = ExtResource("2_uv1wm")
 region = Rect2(352, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nxm6t"]
-atlas = ExtResource("2_50pkq")
+atlas = ExtResource("2_uv1wm")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r7iuf"]
-atlas = ExtResource("2_50pkq")
+atlas = ExtResource("2_uv1wm")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nflf7"]
-atlas = ExtResource("2_50pkq")
+atlas = ExtResource("2_uv1wm")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cuvba"]
-atlas = ExtResource("2_50pkq")
+atlas = ExtResource("2_uv1wm")
 region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_50wod"]
-atlas = ExtResource("2_50pkq")
+atlas = ExtResource("2_uv1wm")
 region = Rect2(64, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j0nrs"]
-atlas = ExtResource("2_50pkq")
+atlas = ExtResource("2_uv1wm")
 region = Rect2(80, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jl42k"]
-atlas = ExtResource("2_50pkq")
+atlas = ExtResource("2_uv1wm")
 region = Rect2(256, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_obqmm"]
-atlas = ExtResource("2_50pkq")
+atlas = ExtResource("2_uv1wm")
 region = Rect2(272, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fvt5l"]
-atlas = ExtResource("2_50pkq")
+atlas = ExtResource("2_uv1wm")
 region = Rect2(288, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fwbnp"]
-atlas = ExtResource("2_50pkq")
+atlas = ExtResource("2_uv1wm")
 region = Rect2(112, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uslan"]
-atlas = ExtResource("2_50pkq")
+atlas = ExtResource("2_uv1wm")
 region = Rect2(128, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g4iyo"]
-atlas = ExtResource("2_50pkq")
+atlas = ExtResource("2_uv1wm")
 region = Rect2(144, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ma2mo"]
-atlas = ExtResource("2_50pkq")
+atlas = ExtResource("2_uv1wm")
 region = Rect2(160, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nuxxy"]
-atlas = ExtResource("2_50pkq")
+atlas = ExtResource("2_uv1wm")
 region = Rect2(176, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqv3"]
-atlas = ExtResource("2_50pkq")
+atlas = ExtResource("2_uv1wm")
 region = Rect2(192, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2y27n"]
-atlas = ExtResource("2_50pkq")
+atlas = ExtResource("2_uv1wm")
 region = Rect2(208, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4jbj8"]
-atlas = ExtResource("2_50pkq")
+atlas = ExtResource("2_uv1wm")
 region = Rect2(224, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6rt4k"]
-atlas = ExtResource("2_50pkq")
+atlas = ExtResource("2_uv1wm")
 region = Rect2(240, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wnt8c"]
@@ -227,14 +227,14 @@ animations = [{
 size = Vector2(12, 14)
 
 [sub_resource type="LabelSettings" id="LabelSettings_rn25h"]
-font = ExtResource("11_4t0rh")
+font = ExtResource("14_bb2ti")
 font_size = 40
 font_color = Color(1, 0.858824, 0.427451, 1)
 outline_size = 5
 outline_color = Color(0.266667, 0.235294, 0.0745098, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_aiq3j"]
-font = ExtResource("11_4t0rh")
+font = ExtResource("14_bb2ti")
 font_size = 24
 font_color = Color(1, 0.858824, 0.427451, 1)
 outline_size = 3
@@ -242,7 +242,7 @@ outline_color = Color(0.266667, 0.235294, 0.0745098, 1)
 shadow_size = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_tj7o0"]
-font = ExtResource("4_q8biw")
+font = ExtResource("15_n3j55")
 font_size = 36
 font_color = Color(0.760784, 0.611765, 0, 1)
 outline_size = 15
@@ -454,7 +454,7 @@ script = ExtResource("16_knqgv")
 modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(576, 584)
 scale = Vector2(3, 3)
-texture = ExtResource("20_tvplo")
+texture = ExtResource("21_w1cg3")
 
 [node name="Inv0" type="Sprite2D" parent="UI/Bag"]
 visible = false

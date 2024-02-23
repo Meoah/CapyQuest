@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0y6t881s24wq"
-path="res://.godot/imported/Croc.png-242a5935678bc5c66472c58ad7101529.ctex"
+uid="uid://2pd4jndo2xg0"
+path="res://.godot/imported/Mushroom-Sheet.png-dc2bb624c08d56fce672ab64c0d1c4f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Visual/Character Sheets/Croc.png"
-dest_files=["res://.godot/imported/Croc.png-242a5935678bc5c66472c58ad7101529.ctex"]
+source_file="res://Visual/Props/Mushroom-Sheet.png"
+dest_files=["res://.godot/imported/Mushroom-Sheet.png-dc2bb624c08d56fce672ab64c0d1c4f7.ctex"]
 
 [params]
 

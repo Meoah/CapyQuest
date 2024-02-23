@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c48ni4id8icbe"
-path="res://.godot/imported/placeholder bag.png-7ec2cad5a93516ddc0ca98dda9a6ea74.ctex"
+uid="uid://c5tgkfekpye68"
+path="res://.godot/imported/Coin-Sheet.png-96aee3f6bd7c3a437b7f41984cdb1eef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Visual/Assets/placeholder bag.png"
-dest_files=["res://.godot/imported/placeholder bag.png-7ec2cad5a93516ddc0ca98dda9a6ea74.ctex"]
+source_file="res://Visual/Props/Coin-Sheet.png"
+dest_files=["res://.godot/imported/Coin-Sheet.png-96aee3f6bd7c3a437b7f41984cdb1eef.ctex"]
 
 [params]
 

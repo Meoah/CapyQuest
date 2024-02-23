@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyf86g2a5rxf2"
-path="res://.godot/imported/Jeff.png-e9cbfab0fc896bf65dcd54432d9da384.ctex"
+uid="uid://c48ni4id8icbe"
+path="res://.godot/imported/placeholder bag.png-b10ece909d5385eed2916be550c60e28.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Visual/Character Sheets/Jeff.png"
-dest_files=["res://.godot/imported/Jeff.png-e9cbfab0fc896bf65dcd54432d9da384.ctex"]
+source_file="res://Visual/Props/placeholder bag.png"
+dest_files=["res://.godot/imported/placeholder bag.png-b10ece909d5385eed2916be550c60e28.ctex"]
 
 [params]
 

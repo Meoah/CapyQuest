@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://d3rgbvhnrhryp"
-path="res://.godot/imported/PixelifySans-Regular.ttf-4ba999335ec69d2e8847dfc3721e4901.fontdata"
+uid="uid://34x2wk5x3d5j"
+path="res://.godot/imported/LowGothic_8x10_Regular.ttf-5baf2a5fad29274cea8f3c6b53448ef3.fontdata"
 
 [deps]
 
-source_file="res://Visual/PixelifySans-Regular.ttf"
-dest_files=["res://.godot/imported/PixelifySans-Regular.ttf-4ba999335ec69d2e8847dfc3721e4901.fontdata"]
+source_file="res://Visual/Fonts/LowGothic_8x10_Regular.ttf"
+dest_files=["res://.godot/imported/LowGothic_8x10_Regular.ttf-5baf2a5fad29274cea8f3c6b53448ef3.fontdata"]
 
 [params]
 

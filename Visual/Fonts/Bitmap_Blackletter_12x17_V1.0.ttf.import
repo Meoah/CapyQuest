@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://d368qtebrp6kk"
-path="res://.godot/imported/Bitmap_Blackletter_12x17_V1.0.ttf-76f32eb1d16b02ff5dcebeeab2c85df2.fontdata"
+path="res://.godot/imported/Bitmap_Blackletter_12x17_V1.0.ttf-c7ee545a7091c01cb20925b6803b7b2a.fontdata"
 
 [deps]
 
-source_file="res://Visual/Bitmap_Blackletter_12x17_V1.0.ttf"
-dest_files=["res://.godot/imported/Bitmap_Blackletter_12x17_V1.0.ttf-76f32eb1d16b02ff5dcebeeab2c85df2.fontdata"]
+source_file="res://Visual/Fonts/Bitmap_Blackletter_12x17_V1.0.ttf"
+dest_files=["res://.godot/imported/Bitmap_Blackletter_12x17_V1.0.ttf-c7ee545a7091c01cb20925b6803b7b2a.fontdata"]
 
 [params]
 

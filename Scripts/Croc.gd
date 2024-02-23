@@ -24,17 +24,18 @@ func _process(delta):
 		$AnimatedSprite2D.scale.x = 1
 	else:
 		$AnimatedSprite2D.play("idle")
-		$CrocSFX.play()
 	
 	if global_position == target_pos and timerSet == false:
 		timerSet = true
-		timer = 2
+		timer = randf_range(2,4)
 	
 	if global_position == target_pos and timer < 0:
 		if global_position == start_pos:
+			$CrocSFX.play()
 			target_pos = start_pos + move_dir
 			timerSet = false
 		else:
+			$CrocSFX.play()
 			target_pos = start_pos
 			timerSet = false
 

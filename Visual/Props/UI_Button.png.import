@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blpkwe8xfp5vw"
-path="res://.godot/imported/Flag-Sheet.png-6f00af5590308292a84b46c930dd7133.ctex"
+uid="uid://iwinlxos0kdk"
+path="res://.godot/imported/UI_Button.png-d7d0c645cf67354797a56d3cc9a3f0a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Visual/Assets/Flag-Sheet.png"
-dest_files=["res://.godot/imported/Flag-Sheet.png-6f00af5590308292a84b46c930dd7133.ctex"]
+source_file="res://Visual/Props/UI_Button.png"
+dest_files=["res://.godot/imported/UI_Button.png-d7d0c645cf67354797a56d3cc9a3f0a2.ctex"]
 
 [params]
 

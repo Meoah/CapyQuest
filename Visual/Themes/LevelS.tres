@@ -1,8 +1,8 @@
 [gd_resource type="Theme" load_steps=9 format=3 uid="uid://coy00xxofkh4n"]
 
-[ext_resource type="FontFile" uid="uid://d3rgbvhnrhryp" path="res://Visual/PixelifySans-Regular.ttf" id="1_b20e5"]
-[ext_resource type="FontFile" uid="uid://34x2wk5x3d5j" path="res://Visual/LowGothic_8x10_Regular.ttf" id="1_unkea"]
-[ext_resource type="Texture2D" uid="uid://iwinlxos0kdk" path="res://Visual/Assets/UI_Button.png" id="2_mmmqj"]
+[ext_resource type="FontFile" uid="uid://d3rgbvhnrhryp" path="res://Visual/Fonts/PixelifySans-Regular.ttf" id="1_b20e5"]
+[ext_resource type="FontFile" uid="uid://34x2wk5x3d5j" path="res://Visual/Fonts/LowGothic_8x10_Regular.ttf" id="1_unkea"]
+[ext_resource type="Texture2D" uid="uid://iwinlxos0kdk" path="res://Visual/Props/UI_Button.png" id="2_mmmqj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qblfp"]
 texture = ExtResource("2_mmmqj")

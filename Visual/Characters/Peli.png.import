@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://iwinlxos0kdk"
-path="res://.godot/imported/UI_Button.png-493adad72f03896945ea4678efd9a270.ctex"
+uid="uid://cotlnoppgeak6"
+path="res://.godot/imported/Peli.png-458775d49915e07540aa075df6928108.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Visual/Assets/UI_Button.png"
-dest_files=["res://.godot/imported/UI_Button.png-493adad72f03896945ea4678efd9a270.ctex"]
+source_file="res://Visual/Characters/Peli.png"
+dest_files=["res://.godot/imported/Peli.png-458775d49915e07540aa075df6928108.ctex"]
 
 [params]
 

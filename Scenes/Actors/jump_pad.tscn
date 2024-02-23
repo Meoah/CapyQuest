@@ -1,8 +1,9 @@
 [gd_scene load_steps=21 format=3 uid="uid://blro5y6g5kf37"]
 
 [ext_resource type="Script" path="res://Scripts/JumpPad.gd" id="1_v2xqs"]
-[ext_resource type="Texture2D" uid="uid://2pd4jndo2xg0" path="res://Visual/Assets/Mushroom-Sheet.png" id="2_lkjni"]
+[ext_resource type="Texture2D" uid="uid://2pd4jndo2xg0" path="res://Visual/Props/Mushroom-Sheet.png" id="2_lkjni"]
 [ext_resource type="AudioStream" uid="uid://cyrl7d4p3mlye" path="res://Audio/SFX/JumpPad.ogg" id="3_8bdvu"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uyv46"]
 size = Vector2(18, 10)
