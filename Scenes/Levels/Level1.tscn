@@ -122,13 +122,23 @@ script = ExtResource("1_a6bqs")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Far" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.5, 0.5)
 
-[node name="TileMap" type="TileMap" parent="ParallaxBackground/ParallaxLayer"]
+[node name="TileMap" type="TileMap" parent="ParallaxBackground/Far"]
 tile_set = SubResource("TileSet_b1od5")
 format = 2
 layer_0/tile_data = PackedInt32Array(-2, 0, 0, -1, 65536, 0, -65536, 131072, 0, -65535, 196608, 0, -65534, 262144, 0)
+
+[node name="Mid" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="TileMap" type="TileMap" parent="ParallaxBackground/Mid"]
+format = 2
+
+[node name="Near" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="TileMap" type="TileMap" parent="ParallaxBackground/Near"]
+format = 2
 
 [node name="Terrain" type="TileMap" parent="."]
 tile_set = ExtResource("2_8jwqf")
