@@ -1,8 +1,9 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://coy00xxofkh4n"]
+[gd_resource type="Theme" load_steps=18 format=3 uid="uid://coy00xxofkh4n"]
 
 [ext_resource type="FontFile" uid="uid://d3rgbvhnrhryp" path="res://Visual/Fonts/PixelifySans-Regular.ttf" id="1_b20e5"]
 [ext_resource type="FontFile" uid="uid://34x2wk5x3d5j" path="res://Visual/Fonts/LowGothic_8x10_Regular.ttf" id="1_unkea"]
 [ext_resource type="Texture2D" uid="uid://iwinlxos0kdk" path="res://Visual/Props/UI_Button.png" id="2_mmmqj"]
+[ext_resource type="Texture2D" uid="uid://qgfbcouevgac" path="res://Visual/Assets/HSlider.png" id="3_jvfvp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qblfp"]
 texture = ExtResource("2_mmmqj")
@@ -44,6 +45,56 @@ texture_margin_right = 8.0
 texture_margin_bottom = 8.0
 region_rect = Rect2(112, 0, 28, 28)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0svcd"]
+atlas = ExtResource("3_jvfvp")
+region = Rect2(44, 0, 10, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igstc"]
+atlas = ExtResource("3_jvfvp")
+region = Rect2(44, 0, 10, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uggjy"]
+atlas = ExtResource("3_jvfvp")
+region = Rect2(44, 0, 10, 8)
+
+[sub_resource type="Image" id="Image_mppeo"]
+data = {
+"data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_lyykk"]
+image = SubResource("Image_mppeo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wqn0e"]
+texture = ExtResource("3_jvfvp")
+texture_margin_left = 4.0
+texture_margin_top = 2.0
+texture_margin_right = 4.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(0, 0, 44, 8)
+modulate_color = Color(1, 1, 1, 0.498039)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_keb2l"]
+texture = ExtResource("3_jvfvp")
+texture_margin_left = 2.0
+texture_margin_top = 4.0
+texture_margin_right = 2.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 44, 8)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nrwxx"]
+texture = ExtResource("3_jvfvp")
+texture_margin_left = 2.0
+texture_margin_top = 4.0
+texture_margin_right = 2.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 44, 8)
+modulate_color = Color(0.501961, 0.501961, 0.501961, 1)
+
 [resource]
 default_font = ExtResource("1_unkea")
 default_font_size = 8
@@ -70,3 +121,12 @@ Button/styles/focus = SubResource("StyleBoxTexture_vkyde")
 Button/styles/hover = SubResource("StyleBoxTexture_2dec3")
 Button/styles/normal = SubResource("StyleBoxTexture_fcil5")
 Button/styles/pressed = SubResource("StyleBoxTexture_lg8ag")
+HSlider/constants/center_grabber = 0
+HSlider/constants/grabber_offset = 0
+HSlider/icons/grabber = SubResource("AtlasTexture_0svcd")
+HSlider/icons/grabber_disabled = SubResource("AtlasTexture_igstc")
+HSlider/icons/grabber_highlight = SubResource("AtlasTexture_uggjy")
+HSlider/icons/tick = SubResource("ImageTexture_lyykk")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_wqn0e")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_keb2l")
+HSlider/styles/slider = SubResource("StyleBoxTexture_nrwxx")
