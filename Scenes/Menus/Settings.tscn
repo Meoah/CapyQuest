@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6yl3s1y5h1ro"]
+
+[ext_resource type="FontFile" uid="uid://d3rgbvhnrhryp" path="res://Visual/Fonts/PixelifySans-Regular.ttf" id="1_do2qx"]
+[ext_resource type="Theme" uid="uid://duwkd7c6av4cy" path="res://Visual/Themes/Sliders.tres" id="2_at0l0"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Music" type="Label" parent="."]
+layout_mode = 0
+offset_left = 513.0
+offset_top = 252.0
+offset_right = 656.0
+offset_bottom = 275.0
+theme_override_fonts/font = ExtResource("1_do2qx")
+text = "Background Music
+"
+
+[node name="BGM" type="HSlider" parent="Music"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 2.0
+offset_right = 158.0
+offset_bottom = 18.0
+theme = ExtResource("2_at0l0")
+min_value = -80.0
+max_value = 0.0
+
+[node name="Effects" type="Label" parent="."]
+layout_mode = 0
+offset_left = 513.0
+offset_top = 297.0
+offset_right = 618.0
+offset_bottom = 320.0
+theme_override_fonts/font = ExtResource("1_do2qx")
+text = "Sound Effects"
+
+[node name="SFX" type="HSlider" parent="Effects"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 2.0
+offset_right = 158.0
+offset_bottom = 18.0
+min_value = -80.0
+max_value = 0.0

@@ -13,67 +13,100 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_2finh")
 
 [node name="BackgroundImage" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 1148.0
-offset_bottom = 646.0
+offset_right = 1280.0
+offset_bottom = 720.0
 texture = ExtResource("2_qt21b")
+stretch_mode = 6
 
 [node name="TITLE DROP" type="Label" parent="."]
-layout_mode = 0
-offset_left = 40.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -536.0
 offset_top = 64.0
-offset_right = 1120.0
+offset_right = 544.0
 offset_bottom = 232.0
+grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_1nt0r")
 theme_override_font_sizes/font_size = 96
 text = "CAPY QUEST"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Copyright" type="Label" parent="."]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 615.0
-offset_right = 319.0
-offset_bottom = 643.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -32.0
+offset_right = 322.0
+offset_bottom = -4.0
+grow_vertical = 0
 text = "Ohlone Game Dev Club"
 label_settings = SubResource("LabelSettings_pop3y")
+vertical_alignment = 2
 
 [node name="Copyright2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 802.0
-offset_top = 614.0
-offset_right = 1146.0
-offset_bottom = 642.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -352.0
+offset_top = -32.0
+offset_right = -8.0
+offset_bottom = -4.0
+grow_horizontal = 0
+grow_vertical = 0
 text = "We own this; do not steal"
 label_settings = SubResource("LabelSettings_pop3y")
+horizontal_alignment = 2
+vertical_alignment = 2
 
-[node name="MainButtons" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 408.0
-offset_top = 320.0
-offset_right = 741.0
-offset_bottom = 844.0
+[node name="Buttons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -136.0
+offset_top = -296.0
+offset_right = 140.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
 
-[node name="StartGameButton" type="Button" parent="MainButtons"]
+[node name="StartGameButton" type="Button" parent="Buttons"]
 layout_mode = 2
 theme = ExtResource("4_38qsa")
 text = "START GAME"
 
-[node name="LevelSelectButton" type="Button" parent="MainButtons"]
+[node name="LevelSelectButton" type="Button" parent="Buttons"]
 layout_mode = 2
 theme = ExtResource("4_38qsa")
 text = "LEVEL SELECT"
 
-[node name="CreditsButton" type="Button" parent="MainButtons"]
+[node name="CreditsButton" type="Button" parent="Buttons"]
 layout_mode = 2
 theme = ExtResource("4_38qsa")
 text = "CREDITS"
 
-[node name="QuitButton" type="Button" parent="MainButtons"]
+[node name="QuitButton" type="Button" parent="Buttons"]
 layout_mode = 2
 theme = ExtResource("4_38qsa")
 text = "QUIT GAME"
@@ -81,7 +114,7 @@ text = "QUIT GAME"
 [node name="BGMTitle" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_eyug6")
 
-[connection signal="pressed" from="MainButtons/StartGameButton" to="." method="_on_start_game_button_pressed"]
-[connection signal="pressed" from="MainButtons/LevelSelectButton" to="." method="_on_level_select_button_pressed"]
-[connection signal="pressed" from="MainButtons/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="MainButtons/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Buttons/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="Buttons/LevelSelectButton" to="." method="_on_level_select_button_pressed"]
+[connection signal="pressed" from="Buttons/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Buttons/QuitButton" to="." method="_on_quit_button_pressed"]

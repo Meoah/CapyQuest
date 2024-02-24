@@ -2,7 +2,7 @@ extends Control
 
 func _ready():
 	$BGMTitle.play()
-	$MainButtons/StartGameButton.grab_focus()
+	$Buttons/StartGameButton.grab_focus()
 
 func _on_start_game_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Levels/Level1.tscn")
