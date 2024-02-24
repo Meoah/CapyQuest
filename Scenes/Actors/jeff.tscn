@@ -373,9 +373,9 @@ text = "Score: 0"
 label_settings = SubResource("LabelSettings_rn25h")
 
 [node name="TimeText" type="Label" parent="UI"]
-offset_left = 864.0
+offset_left = 981.0
 offset_top = 16.0
-offset_right = 1140.0
+offset_right = 1257.0
 offset_bottom = 58.0
 text = "Time:"
 label_settings = SubResource("LabelSettings_aiq3j")
@@ -437,21 +437,21 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="HeartL" type="AnimatedSprite2D" parent="UI"]
-position = Vector2(504, 37)
+position = Vector2(540, 613)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_81jyt")
 animation = &"Full"
 script = ExtResource("14_w5qwq")
 
 [node name="HeartM" type="AnimatedSprite2D" parent="UI"]
-position = Vector2(576, 37)
+position = Vector2(612, 613)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_81jyt")
 animation = &"Full"
 script = ExtResource("15_5rtlp")
 
 [node name="HeartR" type="AnimatedSprite2D" parent="UI"]
-position = Vector2(648, 37)
+position = Vector2(684, 613)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_81jyt")
 animation = &"Full"
@@ -462,34 +462,34 @@ script = ExtResource("16_knqgv")
 
 [node name="BagSprite" type="Sprite2D" parent="UI/Bag"]
 modulate = Color(1, 1, 1, 0.784314)
-position = Vector2(576, 584)
-scale = Vector2(3, 3)
+position = Vector2(621, 44)
+scale = Vector2(2, 2)
 texture = ExtResource("21_w1cg3")
 
 [node name="Inv0" type="Sprite2D" parent="UI/Bag"]
 visible = false
-modulate = Color(1, 1, 1, 0.784314)
-position = Vector2(455, 584)
-scale = Vector2(3, 3)
+modulate = Color(1, 1, 1, 0.882353)
+position = Vector2(540, 44)
+scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_kux6f")
 
 [node name="Inv1" type="Sprite2D" parent="UI/Bag"]
 visible = false
-modulate = Color(1, 1, 1, 0.784314)
-position = Vector2(536, 584)
-scale = Vector2(3, 3)
+modulate = Color(1, 1, 1, 0.882353)
+position = Vector2(594, 44)
+scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_tqtdk")
 
 [node name="Inv2" type="Sprite2D" parent="UI/Bag"]
 visible = false
-modulate = Color(1, 1, 1, 0.784314)
-position = Vector2(616, 584)
-scale = Vector2(3, 3)
+modulate = Color(1, 1, 1, 0.882353)
+position = Vector2(648, 44)
+scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_3mc8f")
 
 [node name="Inv3" type="Sprite2D" parent="UI/Bag"]
 visible = false
-modulate = Color(1, 1, 1, 0.784314)
-position = Vector2(698, 584)
-scale = Vector2(3, 3)
+modulate = Color(1, 1, 1, 0.882353)
+position = Vector2(702, 44)
+scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_jm5y0")
