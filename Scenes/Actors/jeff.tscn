@@ -317,6 +317,7 @@ autoplay = "idle"
 frame_progress = 0.537738
 
 [node name="BGM" type="Node2D" parent="."]
+process_mode = 3
 
 [node name="DayBGM" type="AudioStreamPlayer2D" parent="BGM"]
 stream = ExtResource("3_yhhd0")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6yl3s1y5h1ro"]
+[gd_scene load_steps=5 format=3 uid="uid://b6yl3s1y5h1ro"]
 
 [ext_resource type="FontFile" uid="uid://d3rgbvhnrhryp" path="res://Visual/Fonts/PixelifySans-Regular.ttf" id="1_do2qx"]
 [ext_resource type="Script" path="res://Scripts/Settings.gd" id="1_trrk1"]
 [ext_resource type="Theme" uid="uid://coy00xxofkh4n" path="res://Visual/Themes/UIHUD.tres" id="3_gs5wx"]
+[ext_resource type="AudioStream" uid="uid://dpuml16r8o6ub" path="res://Audio/SFX/Peli.ogg" id="4_ikvrt"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -38,8 +39,9 @@ anchor_top = 0.0869565
 anchor_right = 1.74825
 anchor_bottom = 0.782609
 theme = ExtResource("3_gs5wx")
-min_value = -80.0
-max_value = 0.0
+max_value = 1.0
+step = 0.1
+value = 1.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Effects" type="Label" parent="."]
@@ -60,8 +62,9 @@ anchor_top = 0.0869565
 anchor_right = 2.23214
 anchor_bottom = 0.782609
 theme = ExtResource("3_gs5wx")
-min_value = -80.0
-max_value = 0.0
+max_value = 1.0
+step = 0.1
+value = 1.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Window" type="Label" parent="."]
@@ -110,4 +113,11 @@ layout_mode = 2
 theme = ExtResource("3_gs5wx")
 text = "BACK"
 
+[node name="TestSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ikvrt")
+bus = &"SFX"
+
+[connection signal="value_changed" from="Music/BGM" to="." method="_on_bgm_value_changed"]
+[connection signal="value_changed" from="Effects/SFX" to="." method="_on_sfx_value_changed"]
+[connection signal="item_selected" from="Window/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="pressed" from="VBoxContainer2/Back" to="." method="_on_back_pressed"]
