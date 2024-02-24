@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://yw0nrdo2tjjh"]
 
 [ext_resource type="Script" path="res://Scripts/LevelSelect.gd" id="1_jflf5"]
-[ext_resource type="Theme" uid="uid://coy00xxofkh4n" path="res://Visual/Themes/UIHUD.tres" id="2_rrkes"]
+[ext_resource type="Theme" uid="uid://b4a488y07ouji" path="res://Visual/Themes/UIHUD.tres" id="2_rrkes"]
 
 [node name="Levels" type="Control"]
 layout_mode = 3
@@ -92,3 +92,4 @@ text = "BACK TO TITLE"
 [connection signal="pressed" from="Buttons/VBoxContainer2/Level2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="Buttons/VBoxContainer3/Level3" to="." method="_on_level_3_pressed"]
 [connection signal="pressed" from="Buttons/VBoxContainer4/Level4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Back" to="." method="_on_back_pressed"]

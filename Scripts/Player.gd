@@ -28,13 +28,17 @@ var msec : int = 0
 var stopwatch : bool = true
 var inv : Array = [0, 0, 0, 0]
 var jumpedFromClimb : float = 0.0
+var revive : float = 0.0
 
 func _ready():
 	score_text.text = str("Score: ", system_global.score)
 
 func _process(delta):
+	if Input.is_action_just_pressed("pause") : $UI/Pause.pause()
+	
 	#timers
 	time = delta
+	revive -= delta
 	hitStun -= delta
 	isInvuln -= delta
 	jumpedFromClimb -= delta
@@ -61,6 +65,7 @@ func _process(delta):
 		get_tree().reload_current_scene()
 
 func _physics_process(delta):
+	if revive > 0 : return
 	#Reset
 	if hitStun <= 0:
 		velocity.x = 0
@@ -167,10 +172,10 @@ func _physics_process(delta):
 	if global_position.y > 100:
 		take_damage(6)
 
-#TODO func frameFreeze(timeScale, duration):
-	#Engine.time_scale = timeScale
-	#await(get_tree().create_timer(duration * timeScale).timeout)
-	#Engine.time_scale = 1.0
+func frameFreeze(timeScale, duration):
+	Engine.time_scale = timeScale
+	await(get_tree().create_timer(duration * timeScale).timeout)
+	Engine.time_scale = 1.0
 
 func footstep():
 	# TODO: check terrain
@@ -221,7 +226,11 @@ func invuln(force : float):
 			modulate.a = 1
 			await get_tree().create_timer((8 * force) * time).timeout
 
-func take_damage(damage: int):
+func checkInvuln():
+	if isInvuln > 0 : return(true)
+	else : return(false)
+
+func take_damage(damage : int):
 	if alive == true and isInvuln < 0:
 		health -= damage
 		if health > 6:
@@ -229,7 +238,6 @@ func take_damage(damage: int):
 		if health <= 0:
 			game_over()
 		if damage > 0:
-			# TODO frameFreeze(0.1, 0.4)
 			invuln(damage * 1)
 			$SFX/HitSFX.play()
 	else:
@@ -273,6 +281,7 @@ func reviveAtCheckpoint():
 	move_speed = 100.0
 	jump_force = 200.0
 	gravity = 500.0
+	revive = 0.2
 	stopwatch = true
 	
 	if BGMSelection == "dawn":

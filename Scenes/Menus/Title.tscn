@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Title.gd" id="1_2finh"]
 [ext_resource type="Texture2D" uid="uid://b1k7hsm34fy6q" path="res://Visual/Assets/Island.png" id="2_qt21b"]
 [ext_resource type="FontFile" uid="uid://d368qtebrp6kk" path="res://Visual/Fonts/Bitmap_Blackletter_12x17_V1.0.ttf" id="3_1nt0r"]
-[ext_resource type="Theme" uid="uid://coy00xxofkh4n" path="res://Visual/Themes/UIHUD.tres" id="4_38qsa"]
+[ext_resource type="Theme" uid="uid://b4a488y07ouji" path="res://Visual/Themes/UIHUD.tres" id="4_38qsa"]
 [ext_resource type="AudioStream" uid="uid://dmsws3055wiou" path="res://Audio/BGM/Capybara_Hero_Opening.mp3" id="5_eyug6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pop3y"]
@@ -27,7 +27,7 @@ offset_bottom = 720.0
 texture = ExtResource("2_qt21b")
 stretch_mode = 6
 
-[node name="TITLE DROP" type="Label" parent="."]
+[node name="TITLEDROP" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5

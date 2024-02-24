@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://cu8n4swsywvgl"]
+[gd_scene load_steps=60 format=3 uid="uid://cu8n4swsywvgl"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_jttq3"]
 [ext_resource type="Texture2D" uid="uid://dyf86g2a5rxf2" path="res://Visual/Characters/Jeff.png" id="2_uv1wm"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" path="res://Scripts/HeartR.gd" id="16_75e8u"]
 [ext_resource type="Script" path="res://Scripts/Bag.gd" id="16_knqgv"]
 [ext_resource type="Texture2D" uid="uid://nx3h4x5k022e" path="res://Visual/Props/Inventory.png" id="21_w1cg3"]
+[ext_resource type="PackedScene" uid="uid://c1qoyk5okepe6" path="res://Scenes/Menus/Pause.tscn" id="22_l5n18"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qxtkr"]
 atlas = ExtResource("2_uv1wm")
@@ -305,6 +306,7 @@ atlas = ExtResource("4_y1du1")
 region = Rect2(126, 18, 18, 18)
 
 [node name="Jeff" type="CharacterBody2D" groups=["Player"]]
+process_mode = 1
 position = Vector2(0, -7)
 script = ExtResource("1_jttq3")
 
@@ -493,3 +495,5 @@ modulate = Color(1, 1, 1, 0.882353)
 position = Vector2(702, 44)
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_jm5y0")
+
+[node name="Pause" parent="UI" instance=ExtResource("22_l5n18")]

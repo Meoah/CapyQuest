@@ -1,4 +1,4 @@
 .godot/**
 export_presets.cfg
-
+releases/
 *.tmp
