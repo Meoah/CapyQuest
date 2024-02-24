@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bp5mq7dgcij2g"]
+[gd_scene load_steps=43 format=3 uid="uid://bp5mq7dgcij2g"]
 
 [ext_resource type="Texture2D" uid="uid://biwond464pw3f" path="res://Visual/Tiles/tiles_packed.png" id="1_6wngx"]
 [ext_resource type="Script" path="res://Scripts/Level2.gd" id="1_xgxop"]
@@ -27,6 +27,8 @@
 [ext_resource type="Script" path="res://Scripts/Switch.gd" id="21_rfcrc"]
 [ext_resource type="AudioStream" uid="uid://7xwxwwte5im6" path="res://Audio/SFX/Switch.ogg" id="22_8812t"]
 [ext_resource type="AudioStream" uid="uid://danh0xd4pxj42" path="res://Audio/SFX/SwitchDoor.ogg" id="23_judq5"]
+[ext_resource type="AudioStream" uid="uid://bvlcpkbx00nvc" path="res://Audio/BGS/Waterfall.ogg" id="27_ah10i"]
+[ext_resource type="AudioStream" uid="uid://o7gvsearc7pb" path="res://Audio/BGS/WindHigh.ogg" id="28_d5tqb"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c232e"]
 load_path = "res://.godot/imported/tiles_packed.png-6ef4f1b30de30a594f77ba0eb35dab88.ctex"
@@ -763,6 +765,20 @@ stream = ExtResource("16_fstk4")
 [node name="EndFlag" parent="Interaction" instance=ExtResource("8_4dj6t")]
 position = Vector2(3543, -630)
 next_scene = "res://Scenes/Levels/Level3.tscn"
+
+[node name="BGS" type="Node2D" parent="."]
+
+[node name="Waterfall" type="AudioStreamPlayer2D" parent="BGS"]
+position = Vector2(1017, -225)
+stream = ExtResource("27_ah10i")
+max_distance = 1000.0
+bus = &"SFX"
+
+[node name="WindHigh" type="AudioStreamPlayer2D" parent="BGS"]
+position = Vector2(1512, -648)
+stream = ExtResource("28_d5tqb")
+max_distance = 1000.0
+bus = &"SFX"
 
 [node name="Jeff" parent="." instance=ExtResource("10_gb25f")]
 position = Vector2(0, -25)

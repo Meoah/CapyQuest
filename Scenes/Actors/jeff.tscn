@@ -320,41 +320,52 @@ frame_progress = 0.537738
 
 [node name="DayBGM" type="AudioStreamPlayer2D" parent="BGM"]
 stream = ExtResource("3_yhhd0")
+bus = &"BGM"
 
 [node name="DuskBGM" type="AudioStreamPlayer2D" parent="BGM"]
 stream = ExtResource("5_hp8ls")
+bus = &"BGM"
 
 [node name="NightBGM" type="AudioStreamPlayer2D" parent="BGM"]
 stream = ExtResource("6_4pm28")
+bus = &"BGM"
 
 [node name="DawnBGM" type="AudioStreamPlayer2D" parent="BGM"]
 stream = ExtResource("6_bw0rk")
+bus = &"BGM"
 
 [node name="TwilightBGM" type="AudioStreamPlayer2D" parent="BGM"]
 stream = ExtResource("7_ho27q")
+bus = &"BGM"
 
 [node name="GameOverBGM" type="AudioStreamPlayer2D" parent="BGM"]
 stream = ExtResource("7_vgp3a")
+bus = &"BGM"
 
 [node name="SFX" type="Node2D" parent="."]
 
 [node name="CoinSFX" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource("5_8g437")
 volume_db = -12.0
+bus = &"SFX"
 
 [node name="GemSFX" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource("6_di5hj")
+bus = &"SFX"
 
 [node name="JumpSFX" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource("5_frqrc")
 volume_db = -6.0
+bus = &"SFX"
 
 [node name="HitSFX" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource("6_6c6cw")
+bus = &"SFX"
 
 [node name="WalkSFX" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource("13_ly6jw")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
