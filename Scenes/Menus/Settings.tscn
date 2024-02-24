@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6yl3s1y5h1ro"]
+[gd_scene load_steps=4 format=3 uid="uid://b6yl3s1y5h1ro"]
 
 [ext_resource type="FontFile" uid="uid://d3rgbvhnrhryp" path="res://Visual/Fonts/PixelifySans-Regular.ttf" id="1_do2qx"]
-[ext_resource type="Theme" uid="uid://duwkd7c6av4cy" path="res://Visual/Themes/Sliders.tres" id="2_at0l0"]
+[ext_resource type="Script" path="res://Scripts/Settings.gd" id="1_trrk1"]
+[ext_resource type="Theme" uid="uid://coy00xxofkh4n" path="res://Visual/Themes/UIHUD.tres" id="3_gs5wx"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_trrk1")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -21,38 +23,68 @@ grow_vertical = 2
 
 [node name="Music" type="Label" parent="."]
 layout_mode = 0
-offset_left = 513.0
-offset_top = 252.0
-offset_right = 656.0
-offset_bottom = 275.0
+anchor_left = 0.400781
+anchor_top = 0.35
+anchor_right = 0.5125
+anchor_bottom = 0.381944
 theme_override_fonts/font = ExtResource("1_do2qx")
-text = "Background Music
-"
+text = "Background Music"
+metadata/_edit_use_anchors_ = true
 
 [node name="BGM" type="HSlider" parent="Music"]
 layout_mode = 0
-offset_left = 150.0
-offset_top = 2.0
-offset_right = 158.0
-offset_bottom = 18.0
-theme = ExtResource("2_at0l0")
+anchor_left = 1.04895
+anchor_top = 0.0869565
+anchor_right = 1.74825
+anchor_bottom = 0.782609
+theme = ExtResource("3_gs5wx")
 min_value = -80.0
 max_value = 0.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Effects" type="Label" parent="."]
 layout_mode = 0
-offset_left = 513.0
-offset_top = 297.0
-offset_right = 618.0
-offset_bottom = 320.0
+anchor_left = 0.400781
+anchor_top = 0.4125
+anchor_right = 0.488281
+anchor_bottom = 0.444444
+offset_right = -7.0
 theme_override_fonts/font = ExtResource("1_do2qx")
 text = "Sound Effects"
+metadata/_edit_use_anchors_ = true
 
 [node name="SFX" type="HSlider" parent="Effects"]
 layout_mode = 0
-offset_left = 150.0
-offset_top = 2.0
-offset_right = 158.0
-offset_bottom = 18.0
+anchor_left = 1.33929
+anchor_top = 0.0869565
+anchor_right = 2.23214
+anchor_bottom = 0.782609
+theme = ExtResource("3_gs5wx")
 min_value = -80.0
 max_value = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Window" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.400781
+anchor_top = 0.4625
+anchor_right = 0.5125
+anchor_bottom = 0.494444
+theme_override_fonts/font = ExtResource("1_do2qx")
+text = "Window Mode"
+metadata/_edit_use_anchors_ = true
+
+[node name="OptionButton" type="OptionButton" parent="Window"]
+layout_mode = 0
+offset_left = 135.0
+offset_right = 262.0
+offset_bottom = 31.0
+theme = ExtResource("3_gs5wx")
+item_count = 3
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Borderless"
+popup/item_1/id = 1
+popup/item_2/text = "Fullscreen"
+popup/item_2/id = 2

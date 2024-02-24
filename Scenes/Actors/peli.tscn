@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Peli.gd" id="1_jgn4a"]
 [ext_resource type="Texture2D" uid="uid://cotlnoppgeak6" path="res://Visual/Characters/Peli.png" id="2_4ivab"]
-[ext_resource type="AudioStream" uid="uid://dotqxid2le6q4" path="res://Audio/SFX/Wind4.ogg" id="3_m0nt6"]
+[ext_resource type="AudioStream" uid="uid://dpuml16r8o6ub" path="res://Audio/SFX/Peli.ogg" id="3_fu28g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kvuog"]
 atlas = ExtResource("2_4ivab")
@@ -99,8 +99,8 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_j8few")
 
 [node name="PeliSFX" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_m0nt6")
-volume_db = -12.0
+stream = ExtResource("3_fu28g")
+volume_db = -8.0
 max_distance = 100.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
