@@ -44,4 +44,5 @@ func _process(delta):
 	for body in overlapping_bodies:
 		if body.is_in_group("Player"):
 			body.knockback(0.35, global_position.x, global_position.y)
+			if body.checkInvuln() == false : body.frameFreeze(0.1, 0.4)
 			body.take_damage(2)

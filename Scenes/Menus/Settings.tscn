@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://d3rgbvhnrhryp" path="res://Visual/Fonts/PixelifySans-Regular.ttf" id="1_do2qx"]
 [ext_resource type="Script" path="res://Scripts/Settings.gd" id="1_trrk1"]
-[ext_resource type="Theme" uid="uid://coy00xxofkh4n" path="res://Visual/Themes/UIHUD.tres" id="3_gs5wx"]
+[ext_resource type="Theme" uid="uid://b4a488y07ouji" path="res://Visual/Themes/UIHUD.tres" id="3_gs5wx"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -68,9 +68,11 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.400781
-anchor_top = 0.4625
-anchor_right = 0.5125
-anchor_bottom = 0.494444
+anchor_top = 0.498611
+anchor_right = 0.400781
+anchor_bottom = 0.498611
+offset_right = 99.0
+offset_bottom = 20.0
 theme_override_fonts/font = ExtResource("1_do2qx")
 text = "Window Mode"
 metadata/_edit_use_anchors_ = true
@@ -88,3 +90,24 @@ popup/item_1/text = "Borderless"
 popup/item_1/id = 1
 popup/item_2/text = "Fullscreen"
 popup/item_2/id = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -136.0
+offset_top = -229.0
+offset_right = 140.0
+offset_bottom = -166.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Back" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("3_gs5wx")
+text = "BACK"
+
+[connection signal="pressed" from="VBoxContainer2/Back" to="." method="_on_back_pressed"]

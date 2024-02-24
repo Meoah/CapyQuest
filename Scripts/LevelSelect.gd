@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	pass
+	$Buttons/VBoxContainer/Level1.grab_focus()
 
 func _on_level_1_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Levels/Level1.tscn")
@@ -14,3 +14,7 @@ func _on_level_3_pressed():
 
 func _on_level_4_pressed():
 	pass
+
+func _on_back_pressed():
+	get_parent()._ready()
+	queue_free()
