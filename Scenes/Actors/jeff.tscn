@@ -243,7 +243,7 @@ shadow_size = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_tj7o0"]
 font = ExtResource("15_n3j55")
-font_size = 36
+font_size = 32
 font_color = Color(0.760784, 0.611765, 0, 1)
 outline_size = 15
 outline_color = Color(0.266667, 0.235294, 0.0745098, 1)
@@ -310,8 +310,9 @@ script = ExtResource("1_jttq3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wnt8c")
-animation = &"walk"
+animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.537738
 
 [node name="BGM" type="Node2D" parent="."]
 
@@ -411,11 +412,21 @@ horizontal_alignment = 2
 
 [node name="GameOverText" type="Label" parent="UI"]
 visible = false
-offset_left = 160.0
-offset_top = 160.0
-offset_right = 1012.0
-offset_bottom = 544.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -426.0
+offset_top = -192.0
+offset_right = 426.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
 text = "JEFF HAS FALLEN!!
+
 
 
 Press Jump to Retry

@@ -67,19 +67,20 @@ func _physics_process(delta):
 	if is_on_floor() and alive == true:
 		jumped = false
 		inMotion = false
-	
+	if climbable == false:
+		climbing = false
 	#Movement
 	
 	if hitStun > 0:
 		if velocity.x > 0 : velocity.x -= gravity * delta
 		if velocity.x < 0 : velocity.x += gravity * delta
 		if -0.1 < velocity.x and velocity.x < 0.1 : velocity.x = 0
-		
-	if not is_on_floor() and climbing == false:
+	
+	if not is_on_floor() and climbing == false and alive == true:
 		velocity.y += gravity * delta
+		if $AnimatedSprite2D.get_animation() != "jump": $AnimatedSprite2D.play("jump")
 		if jumped == false:
 			jumped = true
-			$AnimatedSprite2D.play("jump")
 		if jumped == true and Input.is_action_pressed("jump") == false and velocity.y < 0:
 			velocity.y += 2 * gravity * delta
 			
@@ -92,8 +93,10 @@ func _physics_process(delta):
 			velocity.x -= move_speed
 			$AnimatedSprite2D.scale.x = -1
 			if is_on_floor():
-				footstep()
-				$AnimatedSprite2D.play("walk")
+				if Input.is_action_pressed("right") != true: 
+					$AnimatedSprite2D.play("walk")
+					footstep()
+				if Input.is_action_pressed("right") == true : $AnimatedSprite2D.play("idle")
 		if climbing == true:
 			velocity.x -= move_speed / 2
 			$AnimatedSprite2D.play("climb")
@@ -104,25 +107,27 @@ func _physics_process(delta):
 			velocity.x += move_speed
 			$AnimatedSprite2D.scale.x = 1
 			if is_on_floor():
-				footstep()
-				$AnimatedSprite2D.play("walk")
+				if Input.is_action_pressed("left") != true: 
+					$AnimatedSprite2D.play("walk")
+					footstep()
+				if Input.is_action_pressed("left") == true : $AnimatedSprite2D.play("idle")
 		if climbing == true:
 			velocity.x += move_speed / 2
 			$AnimatedSprite2D.play("climb")
 			
-	if Input.is_action_pressed("up") and alive == true and hitStun <= 0 and climbable == true and jumpedFromClimb < 0:
+	if Input.is_action_pressed("up") and alive == true and climbable == true and hitStun <= 0 and jumpedFromClimb < 0:
 		inMotion = true
 		climbing = true
 		velocity.y -= move_speed / 2
 		$AnimatedSprite2D.play("climb")
 		
-	if Input.is_action_just_pressed("down") and alive == true and hitStun <= 0 and descendable == true and jumpedFromClimb < 0:
+	if Input.is_action_just_pressed("down") and alive == true and descendable == true and hitStun <= 0 and jumpedFromClimb < 0:
 		inMotion = true
 		climbing = true
 		global_position.y += 1
 		$AnimatedSprite2D.play("climb")
 		
-	if Input.is_action_pressed("down") and alive == true and hitStun <= 0 and climbable == true and jumpedFromClimb < 0:
+	if Input.is_action_pressed("down") and alive == true and climbable == true and hitStun <= 0 and jumpedFromClimb < 0:
 		inMotion = true
 		climbing = true
 		velocity.y += move_speed
@@ -130,7 +135,7 @@ func _physics_process(delta):
 		
 	if climbing == true:
 		if velocity.y == 0 and velocity.x == 0:
-			$AnimatedSprite2D.play("hang")
+			$AnimatedSprite2D.pause()
 		if is_on_floor():
 			$AnimatedSprite2D.play("idle")
 			inMotion = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bif7phs1885na"]
+[gd_scene load_steps=15 format=3 uid="uid://bq7l7thus22aa"]
 
 [ext_resource type="Script" path="res://Scripts/Peli.gd" id="1_jgn4a"]
 [ext_resource type="Texture2D" uid="uid://cotlnoppgeak6" path="res://Visual/Characters/Peli.png" id="2_4ivab"]
@@ -91,6 +91,7 @@ move_dir = Vector2(50, 0)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pn51a")
 animation = &"walk"
+autoplay = "walk"
 frame_progress = 0.990736
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

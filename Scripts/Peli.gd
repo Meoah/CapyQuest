@@ -7,23 +7,23 @@ var timer : float = 0
 var timerSet : bool = false
 var start_pos : Vector2
 var target_pos : Vector2
+var rotationSpeed : float = 2.0
 
 func _ready():
 	start_pos = global_position
 	target_pos = start_pos + move_dir
-
-func _process(delta):
+	
+func _physics_process(delta):
 	global_position = global_position.move_toward(target_pos, move_speed * delta)
 	timer -= delta
 	
-	if global_position.x - target_pos.x > 0:
-		$AnimatedSprite2D.play("walk")
-		$AnimatedSprite2D.scale.x = -1
-	elif global_position.x - target_pos.x < 0:
-		$AnimatedSprite2D.play("walk")
-		$AnimatedSprite2D.scale.x = 1
-	else:
-		$AnimatedSprite2D.play("idle")
+	
+	if fposmod($AnimatedSprite2D.get_rotation_degrees() - 90, 360) < 180:
+		$AnimatedSprite2D.flip_v = true
+	if fposmod($AnimatedSprite2D.get_rotation_degrees() - 90, 360) > 180:
+		$AnimatedSprite2D.flip_v = false
+	
+	rotateToTarget(get_node("/root/Main/Jeff"), delta)
 	
 	if global_position == target_pos and timerSet == false:
 		timerSet = true
@@ -39,6 +39,15 @@ func _process(delta):
 			target_pos = start_pos
 			timerSet = false
 
-func _on_body_entered(body):
-	if body.is_in_group("Player"):
-		body.take_damage(3)
+func _process(delta):
+	var overlapping_bodies = get_overlapping_bodies()
+
+	for body in overlapping_bodies:
+		if body.is_in_group("Player"):
+			body.knockback(0.35, global_position.x, global_position.y)
+			body.take_damage(2)
+	
+func rotateToTarget(target, delta):
+	var direction = target.global_position - global_position
+	var angleTo = $AnimatedSprite2D.transform.x.angle_to(direction)
+	$AnimatedSprite2D.rotate(sign(angleTo) * min(delta * rotationSpeed, abs(angleTo)))

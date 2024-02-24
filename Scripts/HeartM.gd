@@ -17,4 +17,5 @@ func _process(delta):
 			play("Full")
 	else:
 		play("Empty")
-		global_position.y = start_y
+		var savedPos = global_position.y
+		global_position.y = savedPos

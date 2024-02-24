@@ -5,6 +5,7 @@ var triggered : bool = false
 func _on_body_entered(body):
 	if body.is_in_group("Player") and triggered == false:
 		body.add_score(15)
+		body.take_damage(-6)
 		body.checkpointPos.x = global_position.x
 		body.checkpointPos.y = global_position.y
 		body.savedDuration = body.duration

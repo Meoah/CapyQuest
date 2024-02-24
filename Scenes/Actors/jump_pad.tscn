@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://2pd4jndo2xg0" path="res://Visual/Props/Mushroom-Sheet.png" id="2_lkjni"]
 [ext_resource type="AudioStream" uid="uid://cyrl7d4p3mlye" path="res://Audio/SFX/JumpPad.ogg" id="3_8bdvu"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uyv46"]
 size = Vector2(18, 10)
 
@@ -71,7 +70,7 @@ region = Rect2(252, 0, 18, 18)
 [sub_resource type="SpriteFrames" id="SpriteFrames_d8psy"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 10.0,
 "texture": SubResource("AtlasTexture_vnabe")
 }, {
 "duration": 1.0,
@@ -135,12 +134,11 @@ shape = SubResource("RectangleShape2D_uyv46")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_d8psy")
-animation = &"spring"
+animation = &"rest"
 autoplay = "rest"
-frame = 5
-frame_progress = 1.0
 
 [node name="SpringSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_8bdvu")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
