@@ -1,4 +1,4 @@
 extends Node2D
 
 func _ready():
-	$Jeff/BGM/DayBGM.play()
+	$Jeff/BGM/DawnBGM.play()

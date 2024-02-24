@@ -1,6 +1,6 @@
 [gd_scene load_steps=46 format=3 uid="uid://dcgnei4447io"]
 
-[ext_resource type="Script" path="res://Scripts/Level2.gd" id="1_suw7j"]
+[ext_resource type="Script" path="res://Scripts/Level1.gd" id="1_suw7j"]
 [ext_resource type="TileSet" uid="uid://c3krqtojqt5xj" path="res://Visual/Tiles/TileSets/TileSet.tres" id="2_8jwqf"]
 [ext_resource type="Texture2D" uid="uid://bwkgox6toj1it" path="res://Visual/Tiles/sky_solid_color.png" id="2_all0p"]
 [ext_resource type="PackedScene" uid="uid://cu8n4swsywvgl" path="res://Scenes/Actors/jeff.tscn" id="3_7mqho"]

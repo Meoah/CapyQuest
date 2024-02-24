@@ -1,7 +1,7 @@
 [gd_scene load_steps=41 format=3 uid="uid://bp5mq7dgcij2g"]
 
 [ext_resource type="Texture2D" uid="uid://biwond464pw3f" path="res://Visual/Tiles/tiles_packed.png" id="1_6wngx"]
-[ext_resource type="Script" path="res://Scripts/Level1.gd" id="1_xgxop"]
+[ext_resource type="Script" path="res://Scripts/Level2.gd" id="1_xgxop"]
 [ext_resource type="Texture2D" uid="uid://bwkgox6toj1it" path="res://Visual/Tiles/sky_solid_color.png" id="2_3w4qn"]
 [ext_resource type="TileSet" uid="uid://c3krqtojqt5xj" path="res://Visual/Tiles/TileSets/TileSet.tres" id="2_yd43x"]
 [ext_resource type="Texture2D" uid="uid://d3j3e0rl24rpi" path="res://Visual/Tiles/clouds.png" id="3_apisl"]
