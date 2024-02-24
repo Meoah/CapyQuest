@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Pause.gd" id="1_yuvp0"]
 [ext_resource type="FontFile" uid="uid://d368qtebrp6kk" path="res://Visual/Fonts/Bitmap_Blackletter_12x17_V1.0.ttf" id="2_xmvxa"]
-[ext_resource type="Theme" uid="uid://b4a488y07ouji" path="res://Visual/Themes/UIHUD.tres" id="3_61cuu"]
+[ext_resource type="Theme" uid="uid://coy00xxofkh4n" path="res://Visual/Themes/UIHUD.tres" id="3_61cuu"]
 [ext_resource type="Texture2D" uid="uid://c48ni4id8icbe" path="res://Visual/Props/placeholder bag.png" id="4_btyjk"]
 
 [node name="Pause" type="Control"]

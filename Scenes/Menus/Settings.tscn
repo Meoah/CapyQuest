@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://d3rgbvhnrhryp" path="res://Visual/Fonts/PixelifySans-Regular.ttf" id="1_do2qx"]
 [ext_resource type="Script" path="res://Scripts/Settings.gd" id="1_trrk1"]
-[ext_resource type="Theme" uid="uid://b4a488y07ouji" path="res://Visual/Themes/UIHUD.tres" id="3_gs5wx"]
+[ext_resource type="Theme" uid="uid://coy00xxofkh4n" path="res://Visual/Themes/UIHUD.tres" id="3_gs5wx"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
