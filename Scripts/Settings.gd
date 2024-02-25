@@ -14,7 +14,7 @@ func _on_sfx_value_changed(value):
 	AudioServer.set_bus_volume_db(2, linear_to_db(value))
 
 func _on_back_pressed():
-	get_parent().backWindow()
+	get_parent()._ready()
 	queue_free()
 
 

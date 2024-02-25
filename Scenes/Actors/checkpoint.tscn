@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://blpkwe8xfp5vw" path="res://Visual/Props/Flag-Sheet.png" id="2_syrtc"]
 [ext_resource type="AudioStream" uid="uid://cqhjp2vsgm65v" path="res://Audio/SFX/Checkpoint.ogg" id="3_ooidt"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_k8kqt"]
 atlas = ExtResource("2_syrtc")
 region = Rect2(0, 0, 18, 18)
@@ -73,5 +72,6 @@ shape = SubResource("RectangleShape2D_neplo")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ooidt")
 volume_db = -4.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

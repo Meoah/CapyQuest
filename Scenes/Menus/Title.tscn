@@ -102,9 +102,15 @@ theme = ExtResource("4_38qsa")
 text = "LEVEL SELECT"
 
 [node name="CreditsButton" type="Button" parent="Buttons"]
+visible = false
 layout_mode = 2
 theme = ExtResource("4_38qsa")
 text = "CREDITS"
+
+[node name="SettingsButton" type="Button" parent="Buttons"]
+layout_mode = 2
+theme = ExtResource("4_38qsa")
+text = "OPTIONS"
 
 [node name="QuitButton" type="Button" parent="Buttons"]
 layout_mode = 2
@@ -113,8 +119,10 @@ text = "QUIT GAME"
 
 [node name="BGMTitle" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_eyug6")
+bus = &"BGM"
 
 [connection signal="pressed" from="Buttons/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="Buttons/LevelSelectButton" to="." method="_on_level_select_button_pressed"]
 [connection signal="pressed" from="Buttons/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Buttons/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Buttons/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -114,5 +114,6 @@ shape = SubResource("CapsuleShape2D_j8few")
 stream = ExtResource("3_imry5")
 volume_db = -12.0
 max_distance = 100.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

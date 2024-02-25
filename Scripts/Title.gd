@@ -18,3 +18,8 @@ func _on_credits_button_pressed():
 
 func _on_quit_button_pressed():
 	get_tree().quit()
+
+
+func _on_settings_button_pressed():
+	var settings = load("res://Scenes/Menus/Settings.tscn").instantiate()
+	add_child(settings)

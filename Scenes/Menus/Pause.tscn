@@ -55,6 +55,7 @@ theme = ExtResource("3_61cuu")
 text = "RESUME"
 
 [node name="Settings" type="Button" parent="PauseMenuUI/Buttons"]
+visible = false
 layout_mode = 2
 theme = ExtResource("3_61cuu")
 text = "OPTIONS"
