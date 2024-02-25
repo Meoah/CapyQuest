@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://cu8n4swsywvgl"]
+[gd_scene load_steps=61 format=3 uid="uid://cu8n4swsywvgl"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_jttq3"]
 [ext_resource type="Texture2D" uid="uid://dyf86g2a5rxf2" path="res://Visual/Characters/Jeff.png" id="2_uv1wm"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://bjvflyai2262b" path="res://Audio/SFX/Gem.ogg" id="6_di5hj"]
 [ext_resource type="AudioStream" uid="uid://dyi76auvxsebt" path="res://Audio/BGM/Capybara_Hero_Twilight.mp3" id="7_ho27q"]
 [ext_resource type="AudioStream" uid="uid://b043lrdgoxcw3" path="res://Audio/BGM/Capybara_Hero_GameOver.mp3" id="7_vgp3a"]
+[ext_resource type="AudioStream" uid="uid://cheqyyphh0h45" path="res://Audio/SFX/Sparkle.ogg" id="11_iu1vs"]
 [ext_resource type="AudioStream" uid="uid://bc4xyuk4s6ckc" path="res://Audio/SFX/Step.ogg" id="13_ly6jw"]
 [ext_resource type="FontFile" uid="uid://34x2wk5x3d5j" path="res://Visual/Fonts/LowGothic_8x10_Regular.ttf" id="14_bb2ti"]
 [ext_resource type="Script" path="res://Scripts/HeartL.gd" id="14_w5qwq"]
@@ -353,6 +354,9 @@ bus = &"SFX"
 [node name="GemSFX" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource("6_di5hj")
 bus = &"SFX"
+
+[node name="GoldSFX" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("11_iu1vs")
 
 [node name="JumpSFX" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource("5_frqrc")

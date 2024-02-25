@@ -304,7 +304,9 @@ func reviveAtCheckpoint():
 	global_position.x = checkpointPos.x
 
 func add_score(amount : int):
-	if amount == 10:
+	if amount == 5:
 		$SFX/CoinSFX.play()
+	if amount == 10:
+		$SFX/GoldSFX.play()
 	system_global.score += amount
 	score_text.text = str("Score: ", system_global.score)
