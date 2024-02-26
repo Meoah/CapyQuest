@@ -4,27 +4,27 @@
 [ext_resource type="Texture2D" uid="uid://blpkwe8xfp5vw" path="res://Visual/Props/Flag-Sheet.png" id="2_syrtc"]
 [ext_resource type="AudioStream" uid="uid://cqhjp2vsgm65v" path="res://Audio/SFX/Checkpoint.ogg" id="3_ooidt"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k8kqt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjkvh"]
 atlas = ExtResource("2_syrtc")
 region = Rect2(0, 0, 18, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m7xgv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_df3qm"]
 atlas = ExtResource("2_syrtc")
 region = Rect2(18, 0, 18, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3ptyi"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kaj2x"]
 atlas = ExtResource("2_syrtc")
 region = Rect2(36, 0, 18, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6cxsd"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_de3et"]
 atlas = ExtResource("2_syrtc")
 region = Rect2(54, 0, 18, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nnvr0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wy00"]
 atlas = ExtResource("2_syrtc")
 region = Rect2(72, 0, 18, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6v4rs"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbtbt"]
 atlas = ExtResource("2_syrtc")
 region = Rect2(90, 0, 18, 18)
 
@@ -32,22 +32,22 @@ region = Rect2(90, 0, 18, 18)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k8kqt")
+"texture": SubResource("AtlasTexture_jjkvh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_m7xgv")
+"texture": SubResource("AtlasTexture_df3qm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3ptyi")
+"texture": SubResource("AtlasTexture_kaj2x")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6cxsd")
+"texture": SubResource("AtlasTexture_de3et")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nnvr0")
+"texture": SubResource("AtlasTexture_1wy00")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6v4rs")
+"texture": SubResource("AtlasTexture_mbtbt")
 }],
 "loop": true,
 "name": &"default",
@@ -64,7 +64,8 @@ script = ExtResource("1_am074")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lak55")
 autoplay = "default"
-frame_progress = 0.345159
+frame = 5
+frame_progress = 0.307908
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_neplo")

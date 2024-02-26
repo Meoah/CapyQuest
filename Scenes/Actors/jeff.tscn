@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://cu8n4swsywvgl"]
+[gd_scene load_steps=62 format=3 uid="uid://cu8n4swsywvgl"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_jttq3"]
 [ext_resource type="Texture2D" uid="uid://dyf86g2a5rxf2" path="res://Visual/Characters/Jeff.png" id="2_uv1wm"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://cheqyyphh0h45" path="res://Audio/SFX/Sparkle.ogg" id="11_iu1vs"]
 [ext_resource type="AudioStream" uid="uid://bc4xyuk4s6ckc" path="res://Audio/SFX/Step.ogg" id="13_ly6jw"]
 [ext_resource type="FontFile" uid="uid://34x2wk5x3d5j" path="res://Visual/Fonts/LowGothic_8x10_Regular.ttf" id="14_bb2ti"]
+[ext_resource type="AudioStream" uid="uid://bxi3vulxbc1pr" path="res://Audio/SFX/Ladder.ogg" id="14_fxdwe"]
 [ext_resource type="Script" path="res://Scripts/HeartL.gd" id="14_w5qwq"]
 [ext_resource type="Script" path="res://Scripts/HeartM.gd" id="15_5rtlp"]
 [ext_resource type="FontFile" uid="uid://d368qtebrp6kk" path="res://Visual/Fonts/Bitmap_Blackletter_12x17_V1.0.ttf" id="15_n3j55"]
@@ -358,14 +359,17 @@ bus = &"SFX"
 [node name="GoldSFX" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource("11_iu1vs")
 
+[node name="HitSFX" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("6_6c6cw")
+bus = &"SFX"
+
 [node name="JumpSFX" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource("5_frqrc")
 volume_db = -6.0
 bus = &"SFX"
 
-[node name="HitSFX" type="AudioStreamPlayer2D" parent="SFX"]
-stream = ExtResource("6_6c6cw")
-bus = &"SFX"
+[node name="LadderSFX" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("14_fxdwe")
 
 [node name="WalkSFX" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource("13_ly6jw")

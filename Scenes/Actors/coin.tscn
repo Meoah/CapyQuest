@@ -6,19 +6,19 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_jrkg2"]
 radius = 7.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7rdyo"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4u3sw"]
 atlas = ExtResource("2_ooai2")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_odc10"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhmwc"]
 atlas = ExtResource("2_ooai2")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a7tdp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_712f6"]
 atlas = ExtResource("2_ooai2")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pprip"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_13vkr"]
 atlas = ExtResource("2_ooai2")
 region = Rect2(48, 0, 16, 16)
 
@@ -26,16 +26,16 @@ region = Rect2(48, 0, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7rdyo")
+"texture": SubResource("AtlasTexture_4u3sw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_odc10")
+"texture": SubResource("AtlasTexture_mhmwc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_a7tdp")
+"texture": SubResource("AtlasTexture_712f6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pprip")
+"texture": SubResource("AtlasTexture_13vkr")
 }],
 "loop": true,
 "name": &"default",
@@ -51,6 +51,6 @@ shape = SubResource("CircleShape2D_jrkg2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tchch")
 autoplay = "default"
-frame_progress = 0.137641
+frame_progress = 0.674004
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
