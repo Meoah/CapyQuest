@@ -177,6 +177,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qi2j1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52k83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ur55")
 }],
 "loop": false,
 "name": &"jump",
@@ -306,6 +312,8 @@ gameOverMusic = "res://Audio/BGM/Capybara_Hero_GameOver.mp3"
 sprite_frames = SubResource("SpriteFrames_wnt8c")
 animation = &"jump"
 autoplay = "idle"
+frame = 4
+frame_progress = 1.0
 
 [node name="SFX" type="Node2D" parent="."]
 

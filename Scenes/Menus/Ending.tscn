@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ytcynirjr0o8" path="res://Visual/Assets/Sky.png" id="2_jywsw"]
 [ext_resource type="FontFile" uid="uid://d368qtebrp6kk" path="res://Visual/Fonts/Bitmap_Blackletter_12x17_V1.0.ttf" id="3_1ejs4"]
 [ext_resource type="Theme" uid="uid://coy00xxofkh4n" path="res://Visual/Themes/UIHUD.tres" id="4_6hy8l"]
-[ext_resource type="AudioStream" uid="uid://ck6ajchl8rw44" path="res://Audio/BGM/Capybara_Hero_Ending.mp3" id="6_lrjxh"]
+[ext_resource type="Script" path="res://Scripts/Buttons.gd" id="6_g2vpr"]
 
 [node name="Ending" type="Control"]
 layout_mode = 3
@@ -15,6 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jmd1d")
+BGM = "res://Audio/BGM/Capybara_Hero_Ending.mp3"
 metadata/_edit_use_anchors_ = true
 
 [node name="Dirt" type="TextureRect" parent="."]
@@ -85,6 +86,9 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("4_6hy8l")
 text = "Return to Title"
+script = ExtResource("6_g2vpr")
+onHover = "res://Audio/SFX/Menu.ogg"
+onSelect = "res://Audio/SFX/Select.ogg"
 
 [node name="Quit" type="Button" parent="."]
 layout_mode = 1
@@ -101,9 +105,15 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("4_6hy8l")
 text = "Quit to Desktop"
+script = ExtResource("6_g2vpr")
+onHover = "res://Audio/SFX/Menu.ogg"
+onSelect = "res://Audio/SFX/Select.ogg"
 
-[node name="BGMEnding" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_lrjxh")
-
+[connection signal="focus_entered" from="Title" to="Title" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="Title" to="Title" method="_on_mouse_entered"]
 [connection signal="pressed" from="Title" to="." method="_on_title_pressed"]
+[connection signal="pressed" from="Title" to="Title" method="_on_pressed"]
+[connection signal="focus_entered" from="Quit" to="Quit" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="Quit" to="Quit" method="_on_mouse_entered"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Quit" to="Quit" method="_on_pressed"]
