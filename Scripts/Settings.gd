@@ -2,14 +2,16 @@ extends Control
 
 func _ready():
 	$GridContainer/BGM.grab_focus()
-	if ProjectSettings.get_setting("display/window/size/mode") == 0 : $GridContainer/OptionButton.selected = 0
-	if ProjectSettings.get_setting("display/window/size/mode") == 3 : $GridContainer/OptionButton.selected = 1
-	if ProjectSettings.get_setting("display/window/size/mode") == 4 : $GridContainer/OptionButton.selected = 2
+	$GridContainer/BGM.set_value_no_signal(global_SaveData.gameSettings_BGM)
+	$GridContainer/SFX.set_value_no_signal(global_SaveData.gameSettings_SFX)
+	$GridContainer/OptionButton.selected = global_SaveData.gameSettings_WindowMode
 
 func _on_bgm_value_changed(value):
+	global_SaveData.gameSettings_BGM = value
 	AudioServer.set_bus_volume_db(1, linear_to_db(value))
 
 func _on_sfx_value_changed(value):
+	global_SaveData.gameSettings_SFX = value
 	AudioServer.set_bus_volume_db(2, linear_to_db(value))
 
 func _on_back_pressed():
@@ -17,15 +19,7 @@ func _on_back_pressed():
 	queue_free()
 
 func _on_option_button_item_selected(index):
-	if index == 0: 
-		ProjectSettings.set_setting("display/window/size/borderless", false)
-		ProjectSettings.set_setting("display/window/size/mode", 0)
-		get_window().set_mode(Window.MODE_WINDOWED)
-	if index == 1:
-		ProjectSettings.set_setting("display/window/size/borderless", true)
-		ProjectSettings.set_setting("display/window/size/mode", 3)
-		get_window().set_mode(Window.MODE_FULLSCREEN)
-	if index == 2:
-		ProjectSettings.set_setting("display/window/size/borderless", true)
-		ProjectSettings.set_setting("display/window/size/mode", 4)
-		get_window().set_mode(Window.MODE_EXCLUSIVE_FULLSCREEN)
+	global_SaveData.gameSettings_WindowMode = index
+	if index == 0 : get_window().set_mode(Window.MODE_WINDOWED)
+	if index == 1 : get_window().set_mode(Window.MODE_FULLSCREEN)
+	if index == 2 : get_window().set_mode(Window.MODE_EXCLUSIVE_FULLSCREEN)

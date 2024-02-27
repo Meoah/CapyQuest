@@ -30,6 +30,7 @@ var stopwatch : bool = true
 var inv : Array = [0, 0, 0, 0]
 var jumpedFromClimb : float = 0.0
 var revive : float = 0.0
+var isInvulnTimer : float = 0.0
 
 func _ready():
 	score_text.text = str("Score: ", global_System.score)
@@ -46,6 +47,14 @@ func _process(delta):
 	
 	if stopwatch == true:
 		duration += delta
+		
+	if alive == true:
+		var x = isInvuln / isInvulnTimer
+		if (x >= 1.0 and x <= 2.0) or (x >= 3.0 and x <= 4.0) or (x >= 5.0 and x <= 6.0) or (x >= 7.0 and x <= 8.0) : modulate.a = 0.5
+		else : modulate.a = 1
+		
+	
+	score_text.text = str("Score: ", global_System.score)
 	
 	@warning_ignore("narrowing_conversion")
 	minutes = fmod(duration, 3600) / 60
@@ -220,12 +229,7 @@ func JumpPad():
 
 func invuln(force : float):
 	isInvuln = force
-	if alive == true:
-		for i in 8:
-			modulate.a = 0.5
-			await get_tree().create_timer((8 * force) * time).timeout
-			modulate.a = 1
-			await get_tree().create_timer((8 * force) * time).timeout
+	isInvulnTimer = force/8
 
 func checkInvuln():
 	if isInvuln > 0 : return(true)
@@ -285,4 +289,3 @@ func add_score(amount : int):
 	if amount == 10:
 		$SFX/GoldSFX.play()
 	global_System.score += amount
-	score_text.text = str("Score: ", global_System.score)

@@ -2,7 +2,6 @@ extends Node
 
 var availableSFX : Array = []
 var queueSFX : Array = []
-
 var availableBGM = AudioStreamPlayer.new()
 var savedBGM : String
 var savedBGMTime : Array = []

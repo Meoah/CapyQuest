@@ -24,6 +24,7 @@ driver/mix_rate=48000
 
 global_SoundManager="*res://Scripts/global_SoundManager.gd"
 global_System="*res://Scripts/global_System.gd"
+global_SaveData="*res://Scripts/global_SaveData.gd"
 
 [display]
 
