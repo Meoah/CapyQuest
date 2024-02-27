@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://yw0nrdo2tjjh"]
+[gd_scene load_steps=4 format=3 uid="uid://yw0nrdo2tjjh"]
 
 [ext_resource type="Script" path="res://Scripts/LevelSelect.gd" id="1_jflf5"]
 [ext_resource type="Theme" uid="uid://coy00xxofkh4n" path="res://Visual/Themes/UIHUD.tres" id="2_rrkes"]
+[ext_resource type="Script" path="res://Scripts/Buttons.gd" id="3_ja3uy"]
 
 [node name="Levels" type="Control"]
 layout_mode = 3
@@ -44,6 +45,9 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("2_rrkes")
 text = "LEVEL 1"
+script = ExtResource("3_ja3uy")
+onHover = "res://Audio/SFX/Menu.ogg"
+onSelect = "res://Audio/SFX/Select.ogg"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Buttons"]
 layout_mode = 2
@@ -52,6 +56,9 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("2_rrkes")
 text = "LEVEL 2"
+script = ExtResource("3_ja3uy")
+onHover = "res://Audio/SFX/Menu.ogg"
+onSelect = "res://Audio/SFX/Select.ogg"
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="Buttons"]
 layout_mode = 2
@@ -60,6 +67,9 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("2_rrkes")
 text = "LEVEL 3"
+script = ExtResource("3_ja3uy")
+onHover = "res://Audio/SFX/Menu.ogg"
+onSelect = "res://Audio/SFX/Select.ogg"
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="Buttons"]
 layout_mode = 2
@@ -68,6 +78,9 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("2_rrkes")
 text = "LEVEL 4"
+script = ExtResource("3_ja3uy")
+onHover = "res://Audio/SFX/Menu.ogg"
+onSelect = "res://Audio/SFX/Select.ogg"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -85,11 +98,31 @@ grow_vertical = 0
 
 [node name="Back" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../../Buttons/VBoxContainer/Level1")
 theme = ExtResource("2_rrkes")
 text = "BACK TO TITLE"
+script = ExtResource("3_ja3uy")
+onHover = "res://Audio/SFX/Menu.ogg"
+onSelect = "res://Audio/SFX/Select.ogg"
 
+[connection signal="focus_entered" from="Buttons/VBoxContainer/Level1" to="." method="_on_level_1_focus_entered"]
+[connection signal="focus_entered" from="Buttons/VBoxContainer/Level1" to="Buttons/VBoxContainer/Level1" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="Buttons/VBoxContainer/Level1" to="Buttons/VBoxContainer/Level1" method="_on_mouse_entered"]
 [connection signal="pressed" from="Buttons/VBoxContainer/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/Level1" to="Buttons/VBoxContainer/Level1" method="_on_pressed"]
+[connection signal="focus_entered" from="Buttons/VBoxContainer2/Level2" to="Buttons/VBoxContainer2/Level2" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="Buttons/VBoxContainer2/Level2" to="Buttons/VBoxContainer2/Level2" method="_on_mouse_entered"]
 [connection signal="pressed" from="Buttons/VBoxContainer2/Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer2/Level2" to="Buttons/VBoxContainer2/Level2" method="_on_pressed"]
+[connection signal="focus_entered" from="Buttons/VBoxContainer3/Level3" to="Buttons/VBoxContainer3/Level3" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="Buttons/VBoxContainer3/Level3" to="Buttons/VBoxContainer3/Level3" method="_on_mouse_entered"]
 [connection signal="pressed" from="Buttons/VBoxContainer3/Level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer3/Level3" to="Buttons/VBoxContainer3/Level3" method="_on_pressed"]
+[connection signal="focus_entered" from="Buttons/VBoxContainer4/Level4" to="Buttons/VBoxContainer4/Level4" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="Buttons/VBoxContainer4/Level4" to="Buttons/VBoxContainer4/Level4" method="_on_mouse_entered"]
 [connection signal="pressed" from="Buttons/VBoxContainer4/Level4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer4/Level4" to="Buttons/VBoxContainer4/Level4" method="_on_pressed"]
+[connection signal="focus_entered" from="VBoxContainer2/Back" to="VBoxContainer2/Back" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="VBoxContainer2/Back" to="VBoxContainer2/Back" method="_on_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer2/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Back" to="VBoxContainer2/Back" method="_on_pressed"]

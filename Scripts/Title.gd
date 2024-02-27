@@ -15,11 +15,11 @@ func _on_level_select_button_pressed():
 
 func _on_credits_button_pressed():
 	print("This is where I'd have a credits screen IF I HAD ONE")
+	
+func _on_settings_button_pressed():
+	$Buttons.visible = false
+	var settings = load("res://Scenes/Menus/Settings.tscn").instantiate()
+	add_child(settings)
 
 func _on_quit_button_pressed():
 	get_tree().quit()
-
-
-func _on_settings_button_pressed():
-	var settings = load("res://Scenes/Menus/Settings.tscn").instantiate()
-	add_child(settings)

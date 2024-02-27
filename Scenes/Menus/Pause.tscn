@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1qoyk5okepe6"]
+[gd_scene load_steps=6 format=3 uid="uid://c1qoyk5okepe6"]
 
 [ext_resource type="Script" path="res://Scripts/Pause.gd" id="1_yuvp0"]
 [ext_resource type="FontFile" uid="uid://d368qtebrp6kk" path="res://Visual/Fonts/Bitmap_Blackletter_12x17_V1.0.ttf" id="2_xmvxa"]
 [ext_resource type="Theme" uid="uid://coy00xxofkh4n" path="res://Visual/Themes/UIHUD.tres" id="3_61cuu"]
 [ext_resource type="Texture2D" uid="uid://c48ni4id8icbe" path="res://Visual/Props/placeholder bag.png" id="4_btyjk"]
+[ext_resource type="Script" path="res://Scripts/Buttons.gd" id="4_y277p"]
 
 [node name="Pause" type="Control"]
 process_mode = 2
@@ -53,29 +54,53 @@ offset_bottom = 584.0
 layout_mode = 2
 theme = ExtResource("3_61cuu")
 text = "RESUME"
+script = ExtResource("4_y277p")
+onHover = "res://Audio/SFX/Menu.ogg"
+onSelect = "res://Audio/SFX/Select.ogg"
 
 [node name="Settings" type="Button" parent="PauseMenuUI/Buttons"]
 visible = false
 layout_mode = 2
 theme = ExtResource("3_61cuu")
 text = "OPTIONS"
+script = ExtResource("4_y277p")
+onHover = "res://Audio/SFX/Menu.ogg"
+onSelect = "res://Audio/SFX/Select.ogg"
 
 [node name="Title" type="Button" parent="PauseMenuUI/Buttons"]
 layout_mode = 2
 theme = ExtResource("3_61cuu")
 text = "RETURN TO TITLE"
+script = ExtResource("4_y277p")
+onHover = "res://Audio/SFX/Menu.ogg"
+onSelect = "res://Audio/SFX/Select.ogg"
 
 [node name="Quit" type="Button" parent="PauseMenuUI/Buttons"]
 layout_mode = 2
 theme = ExtResource("3_61cuu")
 text = "QUIT TO DESKTOP"
+script = ExtResource("4_y277p")
+onHover = "res://Audio/SFX/Menu.ogg"
+onSelect = "res://Audio/SFX/Select.ogg"
 
 [node name="PlaceholderBag" type="Sprite2D" parent="PauseMenuUI"]
 position = Vector2(344, 464)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("4_btyjk")
 
+[connection signal="focus_entered" from="PauseMenuUI/Buttons/Continue" to="PauseMenuUI/Buttons/Continue" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="PauseMenuUI/Buttons/Continue" to="PauseMenuUI/Buttons/Continue" method="_on_mouse_entered"]
 [connection signal="pressed" from="PauseMenuUI/Buttons/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="PauseMenuUI/Buttons/Continue" to="PauseMenuUI/Buttons/Continue" method="_on_pressed"]
+[connection signal="focus_entered" from="PauseMenuUI/Buttons/Settings" to="PauseMenuUI/Buttons/Settings" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="PauseMenuUI/Buttons/Settings" to="PauseMenuUI/Buttons/Settings" method="_on_mouse_entered"]
 [connection signal="pressed" from="PauseMenuUI/Buttons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="PauseMenuUI/Buttons/Settings" to="PauseMenuUI/Buttons/Settings" method="_on_pressed"]
+[connection signal="focus_entered" from="PauseMenuUI/Buttons/Title" to="PauseMenuUI/Buttons/Title" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="PauseMenuUI/Buttons/Title" to="PauseMenuUI/Buttons/Title" method="_on_mouse_entered"]
 [connection signal="pressed" from="PauseMenuUI/Buttons/Title" to="." method="_on_title_pressed"]
+[connection signal="pressed" from="PauseMenuUI/Buttons/Title" to="PauseMenuUI/Buttons/Title" method="_on_pressed"]
+[connection signal="focus_entered" from="PauseMenuUI/Buttons/Quit" to="PauseMenuUI/Buttons/Quit" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="PauseMenuUI/Buttons/Quit" to="PauseMenuUI/Buttons/Quit" method="_on_mouse_entered"]
 [connection signal="pressed" from="PauseMenuUI/Buttons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="PauseMenuUI/Buttons/Quit" to="PauseMenuUI/Buttons/Quit" method="_on_pressed"]

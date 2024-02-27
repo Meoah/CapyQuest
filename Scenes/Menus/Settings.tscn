@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6yl3s1y5h1ro"]
+[gd_scene load_steps=5 format=3 uid="uid://b6yl3s1y5h1ro"]
 
 [ext_resource type="Script" path="res://Scripts/Settings.gd" id="1_trrk1"]
 [ext_resource type="Theme" uid="uid://coy00xxofkh4n" path="res://Visual/Themes/UIHUD.tres" id="3_gs5wx"]
-[ext_resource type="AudioStream" uid="uid://dotqxid2le6q4" path="res://Audio/SFX/Wind4.ogg" id="4_6knkq"]
+[ext_resource type="Script" path="res://Scripts/Sliders.gd" id="4_71nhr"]
+[ext_resource type="Script" path="res://Scripts/DropDownMenus.gd" id="4_75yyn"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -25,79 +26,95 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Music" type="Label" parent="."]
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.3375
-anchor_top = 0.4
-anchor_right = 0.501562
-anchor_bottom = 0.441667
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -152.0
+offset_top = -144.0
+offset_right = 148.0
+offset_bottom = -81.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(150, 0)
+
+[node name="Back" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("3_gs5wx")
+text = "BACK"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 256.0
+offset_right = 840.0
+offset_bottom = 414.0
+pivot_offset = Vector2(200, 0)
+columns = 2
+
+[node name="Music" type="Label" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 12
+size_flags_vertical = 7
 theme = ExtResource("3_gs5wx")
 text = "Background Music"
+horizontal_alignment = 2
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="BGM" type="HSlider" parent="Music"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 2.1
-anchor_right = 2.7993
-anchor_bottom = 0.362319
-offset_left = -225.0
-offset_right = -271.853
-offset_bottom = 9.13043
-scale = Vector2(2, 2)
+[node name="BGM" type="HSlider" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
 theme = ExtResource("3_gs5wx")
 max_value = 1.0
 step = 0.1
 value = 1.0
+script = ExtResource("4_71nhr")
+onHover = "res://Audio/SFX/Menu.ogg"
+onValueChange = "res://Audio/SFX/Select.ogg"
 metadata/_edit_use_anchors_ = true
 
-[node name="Effects" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.3375
-anchor_top = 0.45
-anchor_right = 0.474219
-anchor_bottom = 0.491667
-offset_right = -7.0
+[node name="Effects" type="Label" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 12
+size_flags_vertical = 7
 theme = ExtResource("3_gs5wx")
 text = "Sound Effects"
+horizontal_alignment = 2
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="SFX" type="HSlider" parent="Effects"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 2.625
-anchor_right = 3.51785
-anchor_bottom = 0.695652
-offset_left = -225.0
-offset_right = -274.999
-offset_bottom = -0.869566
-scale = Vector2(2, 2)
+[node name="SFX" type="HSlider" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
 theme = ExtResource("3_gs5wx")
 max_value = 1.0
 step = 0.1
 value = 1.0
+script = ExtResource("4_71nhr")
+onHover = "res://Audio/SFX/Menu.ogg"
+onValueChange = "res://Audio/SFX/Select.ogg"
 metadata/_edit_use_anchors_ = true
 
-[node name="Window" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.3375
-anchor_top = 0.5
-anchor_right = 0.375781
-anchor_bottom = 0.513889
-offset_right = 99.0
-offset_bottom = 20.0
+[node name="Window" type="Label" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 12
+size_flags_vertical = 7
 theme = ExtResource("3_gs5wx")
 text = "Window Mode"
+horizontal_alignment = 2
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="OptionButton" type="OptionButton" parent="Window"]
-layout_mode = 0
-offset_left = 225.0
-offset_right = 352.0
-offset_bottom = 31.0
+[node name="OptionButton" type="OptionButton" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
 theme = ExtResource("3_gs5wx")
 item_count = 3
 popup/item_0/text = "Windowed"
@@ -106,31 +123,21 @@ popup/item_1/text = "Borderless"
 popup/item_1/id = 1
 popup/item_2/text = "Fullscreen"
 popup/item_2/id = 2
+script = ExtResource("4_75yyn")
+onHover = "res://Audio/SFX/Menu.ogg"
+onSelect = "res://Audio/SFX/Select.ogg"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -136.0
-offset_top = -162.0
-offset_right = 140.0
-offset_bottom = -99.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Back" type="Button" parent="VBoxContainer2"]
-layout_mode = 2
-theme = ExtResource("3_gs5wx")
-text = "BACK"
-
-[node name="TestSFX" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_6knkq")
-bus = &"SFX"
-
-[connection signal="value_changed" from="Music/BGM" to="." method="_on_bgm_value_changed"]
-[connection signal="value_changed" from="Effects/SFX" to="." method="_on_sfx_value_changed"]
-[connection signal="item_selected" from="Window/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="pressed" from="VBoxContainer2/Back" to="." method="_on_back_pressed"]
+[connection signal="focus_entered" from="GridContainer/BGM" to="GridContainer/BGM" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="GridContainer/BGM" to="GridContainer/BGM" method="_on_mouse_entered"]
+[connection signal="value_changed" from="GridContainer/BGM" to="." method="_on_bgm_value_changed"]
+[connection signal="value_changed" from="GridContainer/BGM" to="GridContainer/BGM" method="_on_value_changed"]
+[connection signal="focus_entered" from="GridContainer/SFX" to="GridContainer/SFX" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="GridContainer/SFX" to="GridContainer/SFX" method="_on_mouse_entered"]
+[connection signal="value_changed" from="GridContainer/SFX" to="." method="_on_sfx_value_changed"]
+[connection signal="value_changed" from="GridContainer/SFX" to="GridContainer/SFX" method="_on_value_changed"]
+[connection signal="focus_entered" from="GridContainer/OptionButton" to="GridContainer/OptionButton" method="_on_focus_entered"]
+[connection signal="item_focused" from="GridContainer/OptionButton" to="GridContainer/OptionButton" method="_on_item_focused"]
+[connection signal="item_selected" from="GridContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="GridContainer/OptionButton" to="GridContainer/OptionButton" method="_on_item_selected"]
+[connection signal="mouse_entered" from="GridContainer/OptionButton" to="GridContainer/OptionButton" method="_on_mouse_entered"]

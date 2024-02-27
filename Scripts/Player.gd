@@ -14,7 +14,7 @@ var descendable : bool = false
 var hitStun : float = 0
 var isInvuln : float = 0
 var BGMSelection : String
-var savedScore : int = system_global.score
+var savedScore : int = global_System.score
 var savedDuration : float = 0.0
 @onready var score_text : Label = get_node("UI/ScoreText")
 @onready var heartL = $UI/HeartL
@@ -31,7 +31,7 @@ var jumpedFromClimb : float = 0.0
 var revive : float = 0.0
 
 func _ready():
-	score_text.text = str("Score: ", system_global.score)
+	score_text.text = str("Score: ", global_System.score)
 
 func _process(delta):
 	if Input.is_action_just_pressed("pause") : $UI/Pause.pause()
@@ -61,7 +61,7 @@ func _process(delta):
 			reviveAtCheckpoint()
 			
 	if Input.is_action_just_pressed("reset"):
-		system_global.score = savedScore
+		global_System.score = savedScore
 		get_tree().reload_current_scene()
 
 func _physics_process(delta):
@@ -308,5 +308,5 @@ func add_score(amount : int):
 		$SFX/CoinSFX.play()
 	if amount == 10:
 		$SFX/GoldSFX.play()
-	system_global.score += amount
-	score_text.text = str("Score: ", system_global.score)
+	global_System.score += amount
+	score_text.text = str("Score: ", global_System.score)
