@@ -16,6 +16,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
+		global_SoundManager.playSFX("res://Audio/SFX/Coin.ogg")
 		#body.take_damage(-1)
 		body.add_score(5)
 		queue_free()
