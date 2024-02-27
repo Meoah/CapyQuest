@@ -1143,33 +1143,43 @@ position = Vector2(7209, -99)
 [node name="Water" type="Node2D" parent="."]
 
 [node name="Water1" parent="Water" instance=ExtResource("7_e6a6y")]
+z_index = 1
 position = Vector2(2871, -99)
 
 [node name="Water2" parent="Water" instance=ExtResource("7_e6a6y")]
+z_index = 1
 position = Vector2(2889, -99)
 
 [node name="Water3" parent="Water" instance=ExtResource("7_e6a6y")]
+z_index = 1
 position = Vector2(2961, -99)
 
 [node name="Water4" parent="Water" instance=ExtResource("7_e6a6y")]
+z_index = 1
 position = Vector2(2979, -99)
 
 [node name="Water5" parent="Water" instance=ExtResource("7_e6a6y")]
+z_index = 1
 position = Vector2(3267, -99)
 
 [node name="Water6" parent="Water" instance=ExtResource("7_e6a6y")]
+z_index = 1
 position = Vector2(3285, -99)
 
 [node name="Water7" parent="Water" instance=ExtResource("7_e6a6y")]
+z_index = 1
 position = Vector2(3303, -99)
 
 [node name="Water8" parent="Water" instance=ExtResource("7_e6a6y")]
+z_index = 1
 position = Vector2(3321, -99)
 
 [node name="Water9" parent="Water" instance=ExtResource("7_e6a6y")]
+z_index = 1
 position = Vector2(3339, -99)
 
 [node name="Water10" parent="Water" instance=ExtResource("7_e6a6y")]
+z_index = 1
 position = Vector2(3357, -99)
 
 [node name="Puzzles" type="Node2D" parent="."]

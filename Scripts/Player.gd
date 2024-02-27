@@ -164,6 +164,7 @@ func _physics_process(delta):
 			jumpedFromClimb = 0.1
 			velocity.y = -jump_force
 			$SFX/JumpSFX.play()
+			$AnimatedSprite2D.stop()
 			$AnimatedSprite2D.play("jump")
 		
 	if Input.is_action_just_pressed("jump") and is_on_floor() and alive == true and hitStun <= 0:
@@ -171,6 +172,7 @@ func _physics_process(delta):
 		jumped = true
 		velocity.y = -jump_force
 		$SFX/JumpSFX.play()
+		$AnimatedSprite2D.stop()
 		$AnimatedSprite2D.play("jump")
 		
 	if inMotion == false and alive == true:
@@ -225,6 +227,8 @@ func knockback(force : float, originX : float, originY : float):
 func JumpPad():
 	inMotion = true
 	jumped = true
+	$AnimatedSprite2D.stop()
+	$AnimatedSprite2D.play("jump")
 	velocity.y = -jump_force*1.5
 
 func invuln(force : float):

@@ -17,13 +17,12 @@ func _physics_process(delta):
 	global_position = global_position.move_toward(target_pos, move_speed * delta)
 	timer -= delta
 	
+	if (global_position.x - get_node("/root/Main/Jeff").global_position.x) < 0:
+		$AnimatedSprite2D.flip_h = false
+	if (global_position.x - get_node("/root/Main/Jeff").global_position.x) > 0:
+		$AnimatedSprite2D.flip_h = true
 	
-	if fposmod($AnimatedSprite2D.get_rotation_degrees() - 90, 360) < 180:
-		$AnimatedSprite2D.flip_v = true
-	if fposmod($AnimatedSprite2D.get_rotation_degrees() - 90, 360) > 180:
-		$AnimatedSprite2D.flip_v = false
-	
-	rotateToTarget(get_node("/root/Main/Jeff"), delta)
+	#rotateToTarget(get_node("/root/Main/Jeff"), delta)
 	
 	if global_position == target_pos and timerSet == false:
 		timerSet = true
@@ -52,3 +51,7 @@ func rotateToTarget(target, delta):
 	var direction = target.global_position - global_position
 	var angleTo = $AnimatedSprite2D.transform.x.angle_to(direction)
 	$AnimatedSprite2D.rotate(sign(angleTo) * min(delta * rotationSpeed, abs(angleTo)))
+	if fposmod($AnimatedSprite2D.get_rotation_degrees() - 90, 360) < 180:
+		$AnimatedSprite2D.flip_v = true
+	if fposmod($AnimatedSprite2D.get_rotation_degrees() - 90, 360) > 180:
+		$AnimatedSprite2D.flip_v = false

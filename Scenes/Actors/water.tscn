@@ -79,5 +79,6 @@ shape = SubResource("RectangleShape2D_bjhk8")
 [node name="WaterSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_1fr3h")
 volume_db = -4.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
