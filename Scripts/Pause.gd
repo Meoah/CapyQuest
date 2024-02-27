@@ -2,6 +2,7 @@ extends Control
 
 func _ready():
 	hide()
+	if get_tree().paused == true : backWindow()
 
 func backWindow():
 	show()

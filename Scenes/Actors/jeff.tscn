@@ -1,18 +1,12 @@
-[gd_scene load_steps=62 format=3 uid="uid://cu8n4swsywvgl"]
+[gd_scene load_steps=56 format=3 uid="uid://cu8n4swsywvgl"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_jttq3"]
 [ext_resource type="Texture2D" uid="uid://cxcblth8k8jly" path="res://Visual/Characters/Jeff-Sheet.png" id="2_tiu38"]
-[ext_resource type="AudioStream" uid="uid://chl20hkpmqmsa" path="res://Audio/BGM/Capybara_Hero_Day.mp3" id="3_yhhd0"]
 [ext_resource type="Texture2D" uid="uid://biwond464pw3f" path="res://Visual/Tiles/tiles_packed.png" id="4_y1du1"]
 [ext_resource type="AudioStream" uid="uid://by3gunoauxk8h" path="res://Audio/SFX/Coin.ogg" id="5_8g437"]
 [ext_resource type="AudioStream" uid="uid://i1a7j27l8eli" path="res://Audio/SFX/Jump.ogg" id="5_frqrc"]
-[ext_resource type="AudioStream" uid="uid://cxk0b0edapmpa" path="res://Audio/BGM/Capybara_Hero_Dusk.mp3" id="5_hp8ls"]
-[ext_resource type="AudioStream" uid="uid://cjbpd5j1ysurm" path="res://Audio/BGM/Capybara_Hero_Night.mp3" id="6_4pm28"]
 [ext_resource type="AudioStream" uid="uid://dewy71kl7f0o0" path="res://Audio/SFX/Hit.ogg" id="6_6c6cw"]
-[ext_resource type="AudioStream" uid="uid://bd00e7pbtb6ru" path="res://Audio/BGM/Capybara_Hero_Dawn.mp3" id="6_bw0rk"]
 [ext_resource type="AudioStream" uid="uid://bjvflyai2262b" path="res://Audio/SFX/Gem.ogg" id="6_di5hj"]
-[ext_resource type="AudioStream" uid="uid://dyi76auvxsebt" path="res://Audio/BGM/Capybara_Hero_Twilight.mp3" id="7_ho27q"]
-[ext_resource type="AudioStream" uid="uid://b043lrdgoxcw3" path="res://Audio/BGM/Capybara_Hero_GameOver.mp3" id="7_vgp3a"]
 [ext_resource type="AudioStream" uid="uid://cheqyyphh0h45" path="res://Audio/SFX/Sparkle.ogg" id="11_iu1vs"]
 [ext_resource type="AudioStream" uid="uid://bc4xyuk4s6ckc" path="res://Audio/SFX/Step.ogg" id="13_ly6jw"]
 [ext_resource type="FontFile" uid="uid://34x2wk5x3d5j" path="res://Visual/Fonts/LowGothic_8x10_Regular.ttf" id="14_bb2ti"]
@@ -306,38 +300,12 @@ region = Rect2(126, 18, 18, 18)
 process_mode = 1
 position = Vector2(0, -9)
 script = ExtResource("1_jttq3")
+gameOverMusic = "res://Audio/BGM/Capybara_Hero_GameOver.mp3"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wnt8c")
-animation = &"climb"
+animation = &"jump"
 autoplay = "idle"
-
-[node name="BGM" type="Node2D" parent="."]
-process_mode = 3
-
-[node name="DayBGM" type="AudioStreamPlayer2D" parent="BGM"]
-stream = ExtResource("3_yhhd0")
-bus = &"BGM"
-
-[node name="DuskBGM" type="AudioStreamPlayer2D" parent="BGM"]
-stream = ExtResource("5_hp8ls")
-bus = &"BGM"
-
-[node name="NightBGM" type="AudioStreamPlayer2D" parent="BGM"]
-stream = ExtResource("6_4pm28")
-bus = &"BGM"
-
-[node name="DawnBGM" type="AudioStreamPlayer2D" parent="BGM"]
-stream = ExtResource("6_bw0rk")
-bus = &"BGM"
-
-[node name="TwilightBGM" type="AudioStreamPlayer2D" parent="BGM"]
-stream = ExtResource("7_ho27q")
-bus = &"BGM"
-
-[node name="GameOverBGM" type="AudioStreamPlayer2D" parent="BGM"]
-stream = ExtResource("7_vgp3a")
-bus = &"BGM"
 
 [node name="SFX" type="Node2D" parent="."]
 

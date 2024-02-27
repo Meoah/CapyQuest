@@ -630,6 +630,7 @@ size = Vector2(90, 54)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_suw7j")
+BGM = "res://Audio/BGM/Capybara_Hero_Dawn.mp3"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

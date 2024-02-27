@@ -59,7 +59,6 @@ onHover = "res://Audio/SFX/Menu.ogg"
 onSelect = "res://Audio/SFX/Select.ogg"
 
 [node name="Settings" type="Button" parent="PauseMenuUI/Buttons"]
-visible = false
 layout_mode = 2
 theme = ExtResource("3_61cuu")
 text = "OPTIONS"

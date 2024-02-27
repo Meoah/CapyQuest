@@ -1,7 +1,10 @@
 extends Control
 
+@export_file("*.mp3") var BGM
+
 func _ready():
-	if !$BGMTitle.playing : $BGMTitle.play()
+	global_SoundManager.clearAllBGM()
+	global_SoundManager.playBGM(BGM)
 	$Buttons/StartGameButton.grab_focus()
 	$Buttons.visible = true
 

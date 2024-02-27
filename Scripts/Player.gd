@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@export_file("*.mp3") var gameOverMusic
 var move_speed : float = 100.0
 var jump_force : float = 200.0
 var gravity : float = 500.0
@@ -256,22 +257,7 @@ func game_over():
 	add_score(-10)
 	$UI/GameOverText.visible = true
 	
-	if $BGM/DawnBGM.is_playing() == true:
-		$BGM/DawnBGM._set_playing(false)
-		BGMSelection = "dawn"
-	if $BGM/DayBGM.is_playing() == true:
-		$BGM/DayBGM._set_playing(false)
-		BGMSelection = "day"
-	if $BGM/DuskBGM.is_playing() == true:
-		$BGM/DuskBGM._set_playing(false)
-		BGMSelection = "dusk"
-	if $BGM/NightBGM.is_playing() == true:
-		$BGM/NightBGM._set_playing(false)
-		BGMSelection = "night"	
-	if $BGM/TwilightBGM.is_playing() == true:
-		$BGM/TwilightBGM._set_playing(false)
-		BGMSelection = "twilight"	
-	$BGM/GameOverBGM._set_playing(true)
+	global_SoundManager.playBGM(gameOverMusic)
 
 func reviveAtCheckpoint():
 	alive = true
@@ -284,17 +270,7 @@ func reviveAtCheckpoint():
 	revive = 0.2
 	stopwatch = true
 	
-	if BGMSelection == "dawn":
-		$BGM/DawnBGM._set_playing(true)
-	if BGMSelection == "day":
-		$BGM/DayBGM._set_playing(true)
-	if BGMSelection == "dusk":
-		$BGM/DuskBGM._set_playing(true)
-	if BGMSelection == "night":
-		$BGM/NightBGM._set_playing(true)
-	if BGMSelection == "twilight":
-		$BGM/TwilightBGM._set_playing(true)
-	$BGM/GameOverBGM._set_playing(false)
+	global_SoundManager.clearBGM()
 	
 	$UI/GameOverText.visible = false
 	$AnimatedSprite2D.play("idle")
