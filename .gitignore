@@ -2,4 +2,3 @@
 export_presets.cfg
 releases/
 *.tmp
-*.import
